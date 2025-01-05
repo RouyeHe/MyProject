@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻详情页</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="s0">
+<div class="s">
+    <div class="a">
+    <div class="a1">ℕ𝔼𝕎𝕊</div>
+    <div class="a3" ><a href='class2' style="text-decoration:none;color: black" ><img src="/static/images/进修申请.png" width="25px">注册</a></div>
+    <div class="a2" ><a href='class1' style="text-decoration:none;color: black" ><img src="/static/images/我的学员.png" width="25px" >登录</a></div>
+    </div>
+<div class="b">
+<div class="b1"><img src="/static/images/日常2_话筒-K歌.png" width="120px"></div>
+    <div class="b2"></div>
+</div>
+<div class="c">
+    <div class="c1"><a href="dangzheng" style="text-decoration:none;color: black">党政</a> </div>
+    <div class="c2"><a href="yule" style="text-decoration:none;color: black">娱乐</a> </div>
+    <div class="c3"><a href="taolun" style="text-decoration:none;color: black">讨论</a> </div>
+    <div class="c4"><a href="search1" style="text-decoration:none;color: black">搜索</a></div>
+</div>
+
+
+
+<div class="t">
+    </div>
+    <div class="t0">
+        <div class="t1">
+       <img src="/static/images/旅游主题_美食.png" width="18px">标题:{{ question.title }}
+
+
+            {%if k%}
+            <div class="t5"><a href="like?id={{question.id}}"><img src="/static/images/点赞.png" width="18px"></a>{{like_number}}</div>
+            {%else%}
+            <div class="t5"><a href="like?id={{question.id}}"><img src="/static/images/点赞%20(1).png" width="18px"></a>{{like_number}}</div>
+            {%endif%}
+
+            {%if l%}
+            <div class="t5"><a href="collect?id={{question.id}}"><img src="/static/images/加星收藏.png" width="18px"></a></div>
+            {%else%}
+            <div class="t5"><a href="collect?id={{question.id}}"><img src="/static/images/加星收藏_填充.png" width="18px"></a></div>
+            {%endif%}
+
+
+
+        </div>
+        <div class="t2">
+        <img src="/static/images/内容.png" width="18px">内容:{{question.content}}
+        </div>
+        <div class="t3">
+        <img src="/static/images/消息%20(1).png" width="18px">评论({{comments|length}})
+
+        <ul class="question-ul">
+        {% for i in comments %}
+            <li class="t30">
+                <div class="t31"><img src="/static/images/用户帮助.png" width="15px"> {{i.author.Studentname}}</div>
+                <div class="t32">:{{i.comment}}</div>
+                <div class="t33">({{i.creat_time}})</div>
+                {%if i.id not in c %}
+                <a href="like_comment?id1={{question.id}}&id={{i.id}}"><img src="/static/images/点赞.png" width="18px"></a>{{i.like}}
+                {%else%}
+                <a href="like_comment?id1={{question.id}}&id={{i.id}}"><img src="/static/images/点赞%20(1).png" width="18px"></a>{{i.like}}
+            {%endif%}
+
+
+            </li>
+        {% endfor %}
+        </ul>
+        </div>
+        <div class="t4">
+            <form method="POST">
+                {{form.csrf_token() }}
+                <img src="/static/images/书写.png" width="18px">
+                {{form.submit(class='t34')}}
+                {{form.comment(class='t35')}}
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<a href="admin">
+<div class="side" style="color: black">
+管理员模式
+</div>
+</a>
+<a href="before_up" style="text-decoration:none;color: black" style="color: black">
+    <div class="bottom">
+发布
+    </div>
+</a>
+<a href="/" style="text-decoration:none;color: black" style="color: black">
+    <div class="top1">
+首页
+    </div>
+</a>
+<a href="index" style="text-decoration:none;color: black" style="color: black">
+    <div class="top2">
+        个人中心
+    </div>
+</a>
+</body>
+</html>

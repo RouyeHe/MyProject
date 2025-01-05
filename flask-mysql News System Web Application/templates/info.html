@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}管理员模式{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="s0r">
+<div class="s">
+    <div class="a">
+    <div class="a1">ℕ𝔼𝕎𝕊</div>
+    <div class="a3" ><a href='register' style="text-decoration:none;color: black" ><img src="/static/images/进修申请.png" width="25px">注册</a></div>
+    <div class="a2" ><a href='logout' style="text-decoration:none;color: black" ><img src="/static/images/我的学员.png" width="25px" >登录</a></div>
+    </div>
+<div class="b">
+<div class="b1"><img src="/static/images/日常2_话筒-K歌.png" width="120px"></div>
+    <div class="b2"></div>
+</div>
+
+
+
+
+
+<div class="r">
+
+<div class="rl">
+
+
+    <div class="r1">学生表  (总数:{{result|length}})
+    <div class="r11" ><a href='add-s' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >增加</a></div>
+        <div class="r11" ><a href='search-s' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >搜索</a></div>
+    </div>
+    <div class="r2">
+<table border="1" width="600px">
+
+  <thead>
+  <th></th>
+  <th></th>
+  <th style="color: blue">Studentname</th>
+  <th style="color: blue">Studentage</th>
+  <th style="color: blue">Studentsex</th>
+  <th style="color: blue">id</th>
+  <th style="color: blue">number</th>
+  <th style="color: blue">password</th>
+  </thead>
+  <tbody>
+  {%for a in result%}
+  <tr>
+    <td><a href="/edit_s?id={{a.id}}" style="text-decoration:none;color: black">修改</a> </td>
+    <td><a href="/delete?id={{a.id}}" style="text-decoration:none;color: black">删除</a></td>
+    <td>{{a.Studentname}}</td>
+    <td>{{a.Studentage}}</td>
+    <td>{{a.Studentsex}}</td>
+    <td>{{a.id}}</td>
+    <td>{{a.number}}</td>
+      <td>{{a.password}}</td>
+  </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+</div>
+    <div class="divide"></div>
+<div class="r3">新闻表  (总数:{{questions|length}})
+       <div class="r11" ><a href='add-q' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >增加</a></div>
+        <div class="r11" ><a href='search-q' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >搜索</a></div>
+</div>
+<div class="r4">
+<table border="1" width="600px">
+
+  <thead>
+  <th></th>
+  <th></th>
+  <th style="color: blue">id</th>
+  <th style="color: blue">title</th>
+  <th style="color: blue">content</th>
+  <th style="color: blue">create_time</th>
+  <th style="color: blue">author_id</th>
+    <th style="color: blue">class1</th>
+  <th style="color: blue">class2</th>
+  </thead>
+  <tbody>
+  {%for question in questions%}
+  <tr>
+    <td><a href="/edit-q?id={{question.id}}" style="text-decoration:none;color: black">修改</a> </td>
+    <td><a href="/delete-q?id={{question.id}}" style="text-decoration:none;color: black">删除</a></td>
+    <td>{{question.id}}</td>
+    <td>{{question.title}}</td>
+    <td>{{question.content}}</td>
+    <td>{{question.create_time}}</td>
+    <td>{{question.author_id}}</td>
+      <td>{{question.class1}}</td>
+    <td>{{question.class2}}</td>
+  </tr>
+  {%endfor%}
+  </tbody>
+</table>
+</div>
+
+
+<div class="divide"></div>
+<div class="r5">评论表  (总数:{{comments|length}})
+       <div class="r11" ><a href='add-c' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >增加</a></div>
+        <div class="r11" ><a href='search-c' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >搜索</a></div>
+</div>
+    <div class="r6">
+<table  width="600px" border="1px">
+
+  <thead>
+  <th></th>
+  <th></th>
+  <th style="color: blue">id</th>
+  <th style="color: blue">comment</th>
+  <th style="color: blue">question_id</th>
+  <th style="color: blue">author_id</th>
+  <th style="color: blue">creat_time</th>
+  </thead>
+  <tbody>
+  {%for comment in comments%}
+  <tr>
+    <td><a href="/edit-c?id={{comment.id}}" style="text-decoration:none;color: black">修改</a> </td>
+    <td><a href="/delete-c?id={{comment.id}}" style="text-decoration:none;color: black">删除</a></td>
+    <td>{{comment.id}}</td>
+    <td>{{comment.comment}}</td>
+    <td>{{comment.question_id}}</td>
+    <td>{{comment.author_id}}</td>
+    <td>{{comment.creat_time}}</td>
+  </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+
+    </div>
+</div>
+
+{%block body%}
+
+{%endblock%}
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<a href="info">
+<div class="side" style="color: black">
+管理员模式
+</div>
+</a>
+<a href="before_up" style="text-decoration:none;color: black" style="color: black">
+    <div class="bottom">
+发布
+    </div>
+</a>
+<a href="/" style="text-decoration:none;color: black" style="color: black">
+    <div class="top1">
+首页
+    </div>
+</a>
+<a href="index" style="text-decoration:none;color: black" style="color: black">
+    <div class="top2">
+        个人中心
+    </div>
+</a>
+</body>
+</html>
+

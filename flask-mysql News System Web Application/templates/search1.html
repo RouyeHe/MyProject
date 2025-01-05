@@ -1,0 +1,65 @@
+{%extends 'base1.html'%}
+{%block title%}搜索新闻{%endblock%}
+{%block title1%}
+
+{%endblock%}
+{%block search%}
+<div class="c">
+    <div class="c1"><a href="dangzheng" style="text-decoration:none;color: black">党政</a> </div>
+    <div class="c2"><a href="yule" style="text-decoration:none;color: black">娱乐</a> </div>
+    <div class="c3"><a href="taolun" style="text-decoration:none;color: black">讨论</a> </div>
+     <form method="post">
+    {{form.submit(class='s3')}}
+        <div class="c6">
+        {{ form.csrf_token() }}
+    请输入题目:
+    {{form.title(class='s1')}}</div>
+        <div class="c7">
+    请输入内容:
+    {{form.content(class='s2')}}</div>
+         </form>
+</div>
+{%endblock%}
+{%block search1%}
+<div class="row" style="margin-top: 20px;">
+            <div class="col"></div>
+            <div class="col-10">
+                <ul class="A-ul">
+                  {% for question in questions[0:5] %}
+                    <li>
+                        <div class="A01">
+                            <div>
+                                <img class="A1" width="30px" height="30px" src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="">
+                                </div>
+                            <div>
+                                <span class="A2">{{ question.author.Studentname }}</span>
+                            </div>
+                        </div>
+                        <div class="A02">
+                            <div class="A3"><a href="/detail?id={{question.id}}">题目:{{ question.title }}</a>
+                            <div class="A31">评论({{question.comments|length}})</div>
+                            </div>
+                            <div class="A4">内容:{{ question.content }}
+                                        <div class="A41">{{ question.create_time }}</div>
+                            </div>
+                        </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+            </div>
+            <div class="col"></div>
+        </div>
+{%endblock%}
+    {%block page%}
+    <div class="g">
+    <ul class="pagination">
+  <li><a href="/">1</a></li>
+  <li><a href="home2">2</a></li>
+  <li><a href="home3">3</a></li>
+  <li><a href="home4">4</a></li>
+  <li><a href="home5">5</a></li>
+  <li><a href="home6">6</a></li>
+  <li><a href="home7">7</a></li>
+</ul>
+        </div>
+    {%endblock%}

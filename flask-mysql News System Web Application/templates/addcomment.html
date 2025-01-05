@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增添评论</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="s0">
+<div class="s">
+    <div class="a">
+    <div class="a1">ℕ𝔼𝕎𝕊</div>
+    <div class="a3" ><a href='class2' style="text-decoration:none;color: black" ><img src="/static/images/进修申请.png" width="25px">注册</a></div>
+    <div class="a2" ><a href='class1' style="text-decoration:none;color: black" ><img src="/static/images/我的学员.png" width="25px" >登录</a></div>
+    </div>
+<div class="b">
+<div class="b1"><img src="/static/images/日常2_话筒-K歌.png" width="120px"></div>
+    <div class="b2"></div>
+</div>
+<div class="c">
+    <div class="c1">党政</div>
+    <div class="c2">娱乐</div>
+    <div class="c3">讨论</div>
+    <div class="c4"><a href="search1" style="text-decoration:none;color: black">搜索</a></div>
+</div>
+
+
+
+<div class="t">
+    </div>
+    <div class="t0">
+        <div class="t1">
+       <img src="/static/images/旅游主题_美食.png" width="18px">标题:{{ question.title }}
+        </div>
+        <div class="t2">
+        <img src="/static/images/内容.png" width="18px">内容:{{question.content}}
+        </div>
+        <div class="t3">
+        <img src="/static/images/消息%20(1).png" width="18px">评论({{b}})
+        <ul class="question-ul">
+        {% for i in comments %}
+            <li class="t30">
+                <div class="t31"><img src="/static/images/用户帮助.png" width="15px"> {{i.author.Studentname}}</div>
+                <div class="t32">:{{i.comment}}</div>
+                <div class="t33">({{i.creat_time}})</div>
+            </li>
+        {% endfor %}
+        </ul>
+        </div>
+        <div class="t4">
+            <img src="/static/images/书写.png" width="18px">
+            <form method="POST">
+        {{ form.csrf_token() }}
+        {{form.id(value=oldid)}}
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<a href="admin">
+<div class="side" style="color: black">
+管理员模式
+</div>
+</a>
+<a href="before_up" style="text-decoration:none;color: black" style="color: black">
+    <div class="bottom">
+发布
+    </div>
+</a>
+<a href="/" style="text-decoration:none;color: black" style="color: black">
+    <div class="top">
+首页
+    </div>
+</a>
+</body>
+</html>

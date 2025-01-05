@@ -1,0 +1,103 @@
+from flask_wtf import FlaskForm
+from wtforms import StringField,PasswordField,SubmitField,SelectField,TextAreaField
+from wtforms.validators import DataRequired,Length
+import wtforms
+class LoginForm(FlaskForm):
+    id= StringField('请输入学号', validators=[DataRequired()])
+    name= StringField('请输入姓名', validators=[DataRequired()])
+    age=StringField('请输入年龄',validators=[DataRequired()])
+    number=StringField('请输入学号',validators=[DataRequired()])
+    sex=StringField('请输入性别',validators=[DataRequired()])
+    password=PasswordField(validators=[DataRequired()])
+    submit=SubmitField('提交')
+class LoginForm1(FlaskForm):
+    id = StringField('请输入学号')
+    name = StringField('请输入姓名')
+    age = StringField('请输入年龄')
+    number = StringField('请输入学号')
+    sex = StringField('请输入性别')
+    password = PasswordField(validators=[DataRequired()])
+    submit = SubmitField('提交')
+class QuestionForm(FlaskForm):
+    title = StringField(validators=[Length(min=3, max=100, message="标题格式错误！")])
+    content = TextAreaField(validators=[Length(min=3,message="内容格式错误！")])
+    a=SelectField('a',choices=['党政','娱乐','讨论'])
+    b= SelectField('b', choices=['法治', '军事', '党史','反腐','党建'])
+    c = SelectField('c', choices=['美食', '电视剧', '音乐','游戏'])
+    d = SelectField('d', choices=['论党政','论娱乐','闲聊'])
+    submit = SubmitField('提交')
+class Search(FlaskForm):
+    title = StringField()
+    content = StringField()
+    submit = SubmitField('搜索')
+class Addcomment(FlaskForm):
+    comment=StringField(validators=[DataRequired()])
+    submit=SubmitField('发表')
+class Change_password(FlaskForm):
+    old_p=StringField(validators=[DataRequired()])
+    new_p=PasswordField(validators=[DataRequired()])
+    new_pp=PasswordField(validators=[DataRequired()])
+    submit=SubmitField('确认修改')
+class Change_information(FlaskForm):
+    Studentname = StringField('请输入姓名')
+    Studentage = StringField('请输入年龄')
+    number = StringField('请输入学号')
+    Studentsex = SelectField(choices=['','男','女'])
+    submit = SubmitField('提交')
+class Register(FlaskForm):
+    Studentname = StringField('请输入姓名',validators=[DataRequired()])
+    Studentage = StringField('请输入年龄',validators=[DataRequired()])
+    number = StringField('请输入学号',validators=[DataRequired()])
+    Studentsex = StringField('请输入性别',validators=[DataRequired()])
+    id=StringField(validators=[DataRequired()])
+    password=StringField(validators=[DataRequired()])
+    submit = SubmitField('提交')
+class S(FlaskForm):
+    id= StringField(validators=[DataRequired()])
+    name= StringField( validators=[DataRequired()])
+    age=StringField(validators=[DataRequired()])
+    number=StringField(validators=[DataRequired()])
+    sex=StringField(validators=[DataRequired()])
+    password=StringField(validators=[DataRequired()])
+    submit=SubmitField('提交')
+class S1(FlaskForm):
+    id= StringField()
+    name= StringField()
+    age=StringField()
+    number=StringField()
+    sex=StringField()
+    password=StringField()
+    submit=SubmitField('提交')
+class C(FlaskForm):
+    id= StringField(validators=[DataRequired()])
+    comment= StringField( validators=[DataRequired()])
+    question_id=StringField(validators=[DataRequired()])
+    author_id=StringField(validators=[DataRequired()])
+    creat_time=StringField(validators=[DataRequired()])
+    submit=SubmitField('提交')
+class C1(FlaskForm):
+    id= StringField()
+    comment= StringField()
+    question_id=StringField()
+    author_id=StringField()
+    creat_time=StringField()
+    submit=SubmitField('提交')
+class Q(FlaskForm):
+    id= StringField(validators=[DataRequired()])
+    title= StringField( validators=[DataRequired()])
+    content=StringField(validators=[DataRequired()])
+    create_time=StringField(validators=[DataRequired()])
+    author_id=StringField(validators=[DataRequired()])
+    class1=StringField(validators=[DataRequired()])
+    class2 = StringField(validators=[DataRequired()])
+    submit=SubmitField('提交')
+class Q1(FlaskForm):
+    id= StringField()
+    title= StringField()
+    content=StringField()
+    create_time=StringField()
+    author_id=StringField()
+    class1=StringField()
+    class2 = StringField()
+    submit=SubmitField('提交')
+

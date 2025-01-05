@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block title%}更改用户{%endblock%}
+{%block body%}
+修改该用户
+<form method="POST">
+    {{ form.csrf_token() }}
+    <p>请输入id</p>
+    {{form.id(value=oldid)}}
+    <p>请输入名称</p>
+    {{form.name(value=oldname)}}
+    <p>请输入年龄</p>
+    {{form.age(value=oldage)}}
+    <p>请输入学号</p>
+    {{form.number(value=oldnumber)}}
+    <p>请输入性别</p>
+    {{form.sex(value=oldsex)}}
+    <p></p>
+    {{form.submit}}<a href="info" >取消</a>
+</form>
+{%endblock%}

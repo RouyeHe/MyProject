@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="s0">
+<div class="s">
+    <div class="a">
+    <div class="a1">ℕ𝔼𝕎𝕊</div>
+    <div class="a3" ><a href='register' style="text-decoration:none;color: black" ><img src="/static/images/进修申请.png" width="25px">注册</a></div>
+    <div class="a2" ><a href='logout' style="text-decoration:none;color: black" ><img src="/static/images/我的学员.png" width="25px" >登录</a></div>
+    </div>
+<div class="b">
+<div class="b1"><img src="/static/images/日常2_话筒-K歌.png" width="120px"></div>
+    <div class="b2"></div>
+</div>
+{%block search%}
+<div class="c">
+    <div class="c1"><a href="dangzheng" style="text-decoration:none;color: black">党政</a> </div>
+    <div class="c2"><a href="yule" style="text-decoration:none;color: black">娱乐</a></div>
+    <div class="c3"><a href="taolun" style="text-decoration:none;color: black">讨论</a></div>
+    <div class="c4"><a href="search1" style="text-decoration:none;color: black">搜索</a></div>
+</div>
+{%endblock%}
+{%block title1%}{%endblock%}
+{%block body%}{%endblock%}
+    {%block search1%}
+<div class="row" style="margin-top: 20px;">
+            <div class="col"></div>
+            <div class="col-10">
+                <ul class="A-ul">
+                  {% for question in questions[0:5] %}
+                    <li>
+                        <div class="A01">
+                            <div>
+                                <img class="A1" width="30px" height="30px" src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="">
+                                </div>
+                            <div>
+                                <span class="A2">{{ question.author.Studentname }}</span>
+                            </div>
+                        </div>
+                        <div class="A02">
+                            <div class="A3"><a href="/detail?id={{question.id}}">题目:{{ question.title }}</a>
+                            <div class="A31">评论({{question.comments|length}})</div>
+                            </div>
+                            <div class="A4">内容:{{ question.content }}
+                                        <div class="A41">{{ question.create_time }}</div>
+                            </div>
+                        </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+            </div>
+            <div class="col"></div>
+        </div>
+    {%endblock%}
+    {%block page%}
+    {%endblock%}
+</div>
+</div>
+<a href="info">
+<div class="side" style="color: black">
+管理员模式
+</div>
+</a>
+<a href="before_up" style="text-decoration:none;color: black" style="color: black">
+    <div class="bottom">
+发布
+    </div>
+</a>
+<a href="/" style="text-decoration:none;color: black" style="color: black">
+    <div class="top1">
+首页
+    </div>
+</a>
+<a href="index" style="text-decoration:none;color: black" style="color: black">
+    <div class="top2">
+        个人中心
+    </div>
+</a>
+</body>
+</html>
+

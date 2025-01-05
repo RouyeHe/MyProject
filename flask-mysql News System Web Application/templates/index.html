@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        time.icon
+{
+  font-size: 1em; /* change icon size */
+  display: block;
+  position: relative;
+  width: 7em;
+  height: 7em;
+  background-color: #fff;
+  border-radius: 0.6em;
+  box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+  overflow: hidden;
+  float: right;
+}
+        time.icon *
+{
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+        time.icon strong
+{
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #fff;
+  background-color: #fd9f1b;
+  border-bottom: 1px dashed #f37302;
+  box-shadow: 0 2px 0 #fd9f1b;
+}
+        time.icon em
+{
+  position: absolute;
+  bottom: 0.3em;
+  color: #fd9f1b;
+}
+       time.icon span
+{
+  font-size: 2.8em;
+  letter-spacing: -0.05em;
+  padding-top: 0.8em;
+  color: #2f2f2f;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>{%block title%}个人{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="s0i">
+<div class="s">
+    <div class="a">
+    <div class="a1">ℕ𝔼𝕎𝕊</div>
+    <div class="a3" ><a href='register' style="text-decoration:none;color: black" ><img src="/static/images/进修申请.png" width="25px">注册</a></div>
+    <div class="a2" ><a href='logout' style="text-decoration:none;color: black" ><img src="/static/images/退出.png" width="25px" >退出</a></div>
+    </div>
+<div class="b">
+<div class="b1"><img src="/static/images/日常2_话筒-K歌.png" width="120px"></div>
+    <div class="b2"></div>
+</div>
+
+
+        {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+
+
+<div class="i1">
+    <div class="i1a0"></div>
+<div class="i1a">
+    <img src="/static/images/个人.png" width="25px">个人信息
+</div>
+<div class="iib">
+    <div class="i1b1"><img src="/static/images/avatar.jpg" class="img-circle" width="200px"></div>
+    <div class="i1b2">
+        <div class="i1b21">用户名：{{Studentname}}</div>
+        <div class="i1b21">id：{{id}}</div>
+        <div class="i1b21">性别：{{sex}}</div>
+        <div class="i1b24">学号：{{number}}</div>
+        <div class="i1b25">年龄：{{age}}</div>
+    </div>
+</div>
+<div class="i1c">
+</div>
+<div class="i1d">
+<div class="i1d2" ><a href='index_hobby' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >个人偏好</a></div>
+<div class="i1d3"><a href='index_todo' style="text-decoration:none;color: black" ><img src="/static/images/待办.png" width="25px" >待办事项</a></div>
+<div class="i1d4"><a href='change_password' style="text-decoration:none;color: black" ><img src="/static/images/修改密码.png" width="25px" >修改密码</a></div>
+<div class="i1d5"><a href='change_information' style="text-decoration:none;color: black" ><img src="/static/images/编辑账户.png" width="25px" >修改信息</a></div>
+    <div class="i1d5"><a href='index_like' style="text-decoration:none;color: black" ><img src="/static/images/编辑账户.png" width="25px" >我的点赞</a></div>
+    <div class="i1d5"><a href='index_collect' style="text-decoration:none;color: black" ><img src="/static/images/编辑账户.png" width="25px" >我的收藏</a></div>
+    <div class="i1d5"><a href='browsing' style="text-decoration:none;color: black" ><img src="/static/images/编辑账户.png" width="25px" >浏览记录</a></div>
+    <div class="i1d5"><a href='index_comment' style="text-decoration:none;color: black" ><img src="/static/images/编辑账户.png" width="25px" >我的评论</a></div>
+    <time  class="icon">
+  <em>Tuesday</em>
+  <strong>December</strong>
+  <span>20</span>
+</time>
+</div>
+</div>
+
+
+
+
+<div class="i2">
+    <div class="i2a0"></div>
+    <div class="i2a"><img src="/static/images/信箱.png" width="25px">个人信箱</div>
+    <div class="i2b">
+        <ul class="A-ul">
+                    <li>
+                        <a  style="text-decoration:none;color: black" href="https://wenku.baidu.com/view/22eee2ca4593daef5ef7ba0d4a7302768e996f2c.html?_wkts_=1671164135020&bdQuery=%E6%AC%A2%E8%BF%8E%E6%B3%A8%E5%86%8C%E6%96%87%E6%A1%88">
+                            <div class="i2b1">
+                                欢迎注册学生新闻网
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a  style="text-decoration:none;color: black" href="http://www.appchina.com/user_must_know.html">
+                            <div class="i2b1">
+                                用户需知
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a  style="text-decoration:none;color: black" href="https://wen.51tietu.net/zhouji/1102574.html">
+                            <div class="i2b1">
+                                共创共建共享良好的媒体环境倡议书
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+    </div>
+</div>
+
+
+
+<div class="i3"></div>
+
+
+<div class="container">
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<a href="info">
+<div class="side" style="color: black">
+管理员模式
+</div>
+</a>
+<a href="before_up" style="text-decoration:none;color: black" style="color: black">
+    <div class="bottom">
+发布
+    </div>
+</a>
+<a href="/" style="text-decoration:none;color: black" style="color: black">
+    <div class="top1">
+首页
+    </div>
+</a>
+<a href="index" style="text-decoration:none;color: black" style="color: black">
+    <div class="top2">
+        个人中心
+    </div>
+</a>
+</body>
+</html>
+

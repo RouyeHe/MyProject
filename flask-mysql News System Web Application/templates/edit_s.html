@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%block title%}更改学生{%endblock%}
+{%block body%}
+    <div class="r1">学生表  (总数:{{result|length}})
+    <div class="r11" ><a href='add-s' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >增加</a></div>
+        <div class="r11" ><a href='search-s' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >搜索</a></div>
+<div class="r11" ><a href='info' style="text-decoration:none;color: black" ><img src="/static/images/爱好.png" width="25px" >取消</a></div>
+    </div>
+    <div class="r2">
+<table border="1" width="600px">
+
+  <thead>
+  <th></th>
+  <th></th>
+  <th style="color: blue">Studentname</th>
+  <th style="color: blue">Studentage</th>
+  <th style="color: blue">Studentsex</th>
+  <th style="color: blue">id</th>
+  <th style="color: blue">number</th>
+  </thead>
+  <tbody>
+  {%for a in result%}
+  <tr>
+    <td><a href="/edit_s?id={{a.id}}" style="text-decoration:none;color: black">修改</a> </td>
+    <td><a href="/delete?id={{a.id}}" style="text-decoration:none;color: black">删除</a></td>
+    <td>{{a.Studentname}}</td>
+    <td>{{a.Studentage}}</td>
+    <td>{{a.Studentsex}}</td>
+    <td>{{a.id}}</td>
+    <td>{{a.number}}</td>
+  </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+</div>
+<div class="divide"></div>
+<div class="rl">
+<form method="POST">
+
+    {{ form.csrf_token() }}
+    <div class="r3">修改该用户</div><br><br>
+    <p>请输入id</p>
+    {{form.id(value=old.id,class='ue')}}
+    <p>请输入名称</p>
+    {{form.name(value=old.Studentname,class='ue')}}
+    <p>请输入年龄</p>
+    {{form.age(value=old.Studentage,class='ue')}}
+    <p>请输入学号</p>
+    {{form.number(value=old.number,class='ue')}}
+    <p>请输入性别</p>
+    {{form.sex(value=old.Studentsex,class='ue')}}
+    <p>请输入密码</p>
+    {{form.password(value=old.password,class='ue')}}
+    <p></p>
+    {{form.submit(class='ud')}}
+<p></p>
+    {{form.submit(class='ud')}}
+</form>
+    </div>
+{%endblock%}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .alert {
+            position: relative;
+            padding: 5px 5px;
+            margin-bottom: 10px;
+            border: 5px solid transparent;
+            border-radius: 5px;
+            color: #985f0d;
+            background-color: #f7ecb5;}
+    </style>
+    <meta charset="UTF-8">
+    <title>{%block title%}个人爱好{%endblock%}</title>
+     <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js" rel="stylesheet">
+    <link href="/static/css/index.css"  rel="stylesheet">
+</script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("a").hide();
+  });
+  $("#show").click(function(){
+    $("a").show();
+  });
+});
+$(document).ready(function(){
+  $("#hide2").click(function(){
+    $("a2").hide();
+  });
+  $("#show").click(function(){
+    $("a2").show();
+  });
+});
+$(document).ready(function(){
+  $("#hide3").click(function(){
+    $("a3").hide();
+  });
+  $("#show").click(function(){
+    $("a3").show();
+  });
+});
+</script>
+
+</head>
+<body>
+<div class="s0i">
+<div class="s">
+    <div class="a">
+    <div class="a1">ℕ𝔼𝕎𝕊</div>
+    <div class="a3" ><a href='class2' style="text-decoration:none;color: black" ><img src="/static/images/进修申请.png" width="25px">注册</a></div>
+    <div class="a2" ><a href='login' style="text-decoration:none;color: black" ><img src="/static/images/退出.png" width="25px" >退出</a></div>
+    </div>
+<div class="b">
+<div class="b1"><img src="/static/images/日常2_话筒-K歌.png" width="120px"></div>
+    <div class="b2"></div>
+</div>
+
+
+        {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}<button class="close">×</button></div>
+    {% endfor %}
+
+
+<div class="i1">
+    <div class="i1a0"></div>
+<div class="i1a">
+    个人信息
+</div>
+<div class="iib">
+    <div class="i1b1"><img src="/static/images/avatar.jpg" class="img-circle" width="200px"></div>
+    <div class="i1b2">
+        <div class="i1b21">用户名：{{Studentname}}</div>
+        <div class="i1b21">id：{{id}}</div>
+        <div class="i1b21">性别：{{sex}}</div>
+        <div class="i1b24">学号：{{number}}</div>
+        <div class="i1b25">年龄：{{age}}</div>
+    </div>
+</div>
+<div class="i1c">
+新闻偏好
+</div>
+<div class="i1d">
+党政
+  <div class="progress">
+    <div class="progress-bar" style="width:90%" ></div>
+  </div>
+    娱乐
+    <div class="progress">
+    <div class="progress-bar" style="width:50%" ></div>
+  </div>
+    讨论
+    <div class="progress">
+    <div class="progress-bar" style="width:80%" ></div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<div class="i2">
+    <div class="i2a0"></div>
+    <div class="i2a"><img src="/static/images/信箱.png" width="25px">个人信箱</div>
+    <div class="i2b">
+        <ul class="A-ul">
+                    <li>
+                        <a  style="text-decoration:none;color: black" href="https://wenku.baidu.com/view/22eee2ca4593daef5ef7ba0d4a7302768e996f2c.html?_wkts_=1671164135020&bdQuery=%E6%AC%A2%E8%BF%8E%E6%B3%A8%E5%86%8C%E6%96%87%E6%A1%88">
+                            <div class="i2b1">
+                                欢迎注册学生新闻网
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a  style="text-decoration:none;color: black" href="http://www.appchina.com/user_must_know.html">
+                            <div class="i2b1">
+                                用户需知
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a  style="text-decoration:none;color: black" href="https://wen.51tietu.net/zhouji/1102574.html">
+                            <div class="i2b1">
+                                共创共建共享良好的媒体环境倡议书
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+    </div>
+</div>
+
+
+
+<div class="i3"></div>
+
+
+<div class="container">
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

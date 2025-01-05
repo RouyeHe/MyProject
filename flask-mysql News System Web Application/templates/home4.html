@@ -1,0 +1,62 @@
+{%extends 'base1.html'%}
+{%block title%}页码4{%endblock%}
+{%block title1%}
+{%endblock%}
+{%block search1%}
+<div class="row" style="margin-top: 20px;">
+            <div class="col"></div>
+            <div class="col-10">
+                <ul class="A-ul">
+                  {% for question in questions[15:20] %}
+                    <li>
+                        <div class="A01">
+                            <div>
+                                <img class="A1" width="30px" height="30px" src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="">
+                                </div>
+                            <div>
+                                <span class="A2">{{ question.author.Studentname }}</span>
+                            </div>
+                        </div>
+                        <div class="A02">
+                            <div class="A3"><a href="/detail?id={{question.id}}">题目:{{ question.title }}</a>
+                            <div class="A31">
+
+                                {%if question.id not in c %}
+                                <a href="collect-p?id={{question.id}}"><img src="/static/images/加星收藏.png" width="18px"></a>
+                                {%else%}
+            <a href="collect-p?id={{question.id}}"><img src="/static/images/加星收藏_填充.png" width="18px"></a>
+            {%endif%}
+
+                                {%if question.id not in d%}
+                                <a href="like-p?id={{question.id}}"><img src="/static/images/点赞.png" width="18px"></a>{{question.like}}
+                               {%else%}
+                                        <a href="like-p?id={{question.id}}"><img src="/static/images/点赞%20(1).png" width="18px"></a>{{question.like}}
+            {%endif%}
+
+
+                                评论({{question.comments|length}})</div>
+                            </div>
+                            <div class="A4">内容:{{ question.content }}
+                                        <div class="A41">{{ question.create_time }}</div>
+                            </div>
+                        </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+            </div>
+            <div class="col"></div>
+        </div>
+{%endblock%}
+    {%block page%}
+    <div class="g">
+    <ul class="pagination">
+  <li><a href="/">1</a></li>
+  <li><a href="home2">2</a></li>
+  <li><a href="home3">3</a></li>
+  <li><a href="home4">4</a></li>
+  <li><a href="home5">5</a></li>
+  <li><a href="home6">6</a></li>
+  <li><a href="home7">7</a></li>
+</ul>
+        </div>
+    {%endblock%}
