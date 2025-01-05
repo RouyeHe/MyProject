@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="a">
+
+
+
+
+
+
+<div class="a1">
+
+
+    <div class="a11"><h2>分类
+</h2>
+        <div class="a2">
+ <a href="t1"><div class="a21"><h2>电子产品</h2></div>
+    </a>
+
+
+           <a href="t2"> <div class="a22"><h2>运动户外</h2></div>
+    </a><a href="t3"><div class="a23"><h2>家用电器</h2></div>
+    </a><a href="t4"><div class="a24"><h2>图书音像</h2></div>
+    </a>
+           <a href="t5"> <div class="a25"><h2>服饰服装</h2>
+    </div></a>
+           <a href="t6"> <div class="a26"><h2>汽车用品</h2>
+    </div></a>
+          <a href="t7">  <div class="a27"><h2>美妆护肤</h2>
+    </div></a>
+          <a href="t8">  <div class="a31"><h2>宠物用品</h2>
+    </div></a>
+          <a href="t9">  <div class="a32"><h2>食品饮料</h2>
+    </div></a>
+           <a href="t10"> <div class="a33"><h2>玩具乐器</h2>
+    </div></a>
+          <a href="t11">  <div class="a34"><h2>家具用品</h2>
+    </div></a>
+         <a href="t12">   <div class="a35"><h2>办公用品</h2>
+    </div></a>
+          <a href="t13">  <div class="a36"><h2>母婴用品</h2>
+</div></a>
+         <a href="t14">   <div class="a37"><h2>健康护理</h2></div></a>
+
+
+
+
+</div>
+    </div>
+{%block bbb%}
+   <a href="/"> <div class="a13"><h2>主页</h2></div></a>{%endblock%}
+   <a href="/index"> <div class="a14"><h1>个人中心</h1></div></a>
+   <a href="/login"> <div class="a15"><h2>登录</h2></div></a>
+   <a href="/register"><div class="a16"><h2>注册</h2></div></a>
+    <a href="/admin"><div class="a17"><h2>管理员</h2></div></a>
+
+    <div class="a12"><h2>搜索商品</h2>
+        <div class="a2s">
+
+
+
+
+
+
+       </div>
+    </div>
+
+
+</div>
+
+
+
+<div class="title">修改个人信息</div>
+<form method="POST" class="user-info-form">
+    {{ form.csrf_token() }}
+
+    <div class="form-group">
+        <label >请输入姓名</label>
+        <p>{{ form1.n(class='input1', id='name') }}</p>
+    </div>
+
+    <div class="form-group">
+        <label>请输入性别</label>
+        <p>{{ form1.s(class='select', id='gender') }}</p>
+    </div>
+
+    <div class="form-group">
+        <p>{{ form1.submit(class='submit1') }}</p>
+    </div>
+</form>
+
+
+
+
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+</head>
+<body>
+<script>
+  // 页面加载后设置闪烁信息的淡出效果
+  window.onload = function() {
+    setTimeout(function() {
+      var flashMessages = document.querySelectorAll('.flash-message');
+      flashMessages.forEach(function(message) {
+        message.style.transition = "opacity 0.5s ease";
+        message.style.opacity = "0";
+        setTimeout(function() {
+          message.remove();
+        }, 500); // 在淡出动画结束后移除元素
+      });
+    }, 1000); // 3秒后开始淡出
+  };
+</script>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+        <div class="flash-message">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+<div class="a">
+    <div class="a4l">
+        <div class="title">登录页面</div>
+        <form method="POST">
+            {{ form.csrf_token }}
+            <p>请输入账号</p>
+            <p>{{ form.a(class_='input1') }}</p>
+            <p>请输入密码</p>
+            <p>{{ form.p(class_='input1') }}</p>
+            <p>{{ form.submit(class_='button') }} <!-- 使用通用按钮样式 -->
+            <a href="/register" class="button">注册</a> <!-- 使用通用按钮样式 --></p>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

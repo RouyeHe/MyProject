@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="a">
+<script>
+  // 页面加载后设置闪烁信息的淡出效果
+  window.onload = function() {
+    setTimeout(function() {
+      var flashMessages = document.querySelectorAll('.flash-message');
+      flashMessages.forEach(function(message) {
+        message.style.transition = "opacity 0.5s ease";
+        message.style.opacity = "0";
+        setTimeout(function() {
+          message.remove();
+        }, 500); // 在淡出动画结束后移除元素
+      });
+    }, 1000); // 3秒后开始淡出
+  };
+</script>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+        <div class="flash-message">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+<div class="a1">
+
+
+    <div class="a11"><h2>分类
+</h2>
+        <div class="a2">
+<a href="t1"><div class="a21"><h2>电子产品</h2></div></a>
+<a href="t2"><div class="a22"><h2>家用电器</h2></div></a>
+<a href="t3"><div class="a23"><h2>服装服饰</h2></div></a>
+<a href="t4"><div class="a24"><h2>美妆护肤</h2></div></a>
+<a href="t5"><div class="a25"><h2>食品饮料</h2></div></a>
+<a href="t6"><div class="a26"><h2>家居用品</h2></div></a>
+<a href="t7"><div class="a27"><h2>母婴用品</h2></div></a>
+<a href="t8"><div class="a31"><h2>运动户外</h2></div></a>
+<a href="t9"><div class="a32"><h2>图书音像</h2></div></a>
+<a href="t10"><div class="a33"><h2>汽车用品</h2></div></a>
+<a href="t11"><div class="a34"><h2>宠物用品</h2></div></a>
+<a href="t12"><div class="a35"><h2>玩具乐器</h2></div></a>
+<a href="t13"><div class="a36"><h2>办公用品</h2></div></a>
+<a href="t14"><div class="a37"><h2>健康护理</h2></div></a>
+
+</div>
+    </div>
+{%block bbb%}
+   <a href="/"> <div class="a13"><h2>主页</h2></div></a>{%endblock%}
+   <a href="/index"> <div class="a14"><h1>个人中心</h1></div></a>
+   <a href="/login"> <div class="a15"><h2>登录</h2></div></a>
+   <a href="/register"><div class="a16"><h2>注册</h2></div></a>
+    <a href="/admin"><div class="a17"><h2>管理员</h2></div></a>
+
+    <div class="a12"><h2>搜索商品</h2>
+        <div class="a2s">
+
+
+
+
+       </div>
+    </div>
+
+
+</div>
+
+<div class="e1">
+    <a href="/index" style="text-decoration: none;color: black"> <div class="e11"><h1>个人信息</h1></div></a>
+    <a href="/my_like"><div class="e12"><h2>我的点赞</h2></div></a>
+    <a href="my_collect"><div class="e13"><h2>我的收藏</h2></div></a>
+    <a href="my_comment"> <div class="e14"><h2>我的评论</h2></div></a>
+       <a href="record"><div class="e15"><h2>浏览记录</h2></div></a>
+
+
+</div>
+
+
+<style>
+    /* 个人信息部分 */
+    .user-info {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    .user-header {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 20px;
+
+    }
+
+    /* 左侧对齐的个人信息 */
+    .user-detail-left {
+        font-size: 18px;
+        color: #34495e;
+        float: left;
+        width: 800px;
+        height: 50px;
+    }
+
+    .user-detail-left .label1,
+    .user-detail-left .label2,
+    .user-detail-left .label3 {
+        font-weight: bold;
+        color: #2980b9;
+    }
+
+    /* 右侧对齐的个人信息 */
+    .user-detail-right {
+        font-size: 18px;
+        color: #34495e;
+        width: 800px;
+        height: 50px;
+
+        float: right;
+    }
+
+    .user-detail-right .label4,
+    .user-detail-right .label5 {
+        font-weight: bold;
+        color: #2980b9;
+    }
+
+    /* 值部分 */
+    .value1, .value2, .value3, .value4, .value5 {
+        color: #34495e;
+    }
+
+    /* 修改个人信息 和 修改密码 */
+    .user-actions a {
+        text-decoration: none;
+        color: #2980b9;
+        font-size: 18px;
+        margin-top: 10px;
+        display: inline-block;
+        transition: color 0.3s ease;
+    }
+
+    .user-actions a:hover {
+        color: #1abc9c;
+    }
+
+    .action-link {
+        text-decoration: none;
+        color: #2980b9;
+        transition: color 0.3s ease;
+    }
+
+    .action-link:hover {
+        color: #1abc9c;
+    }
+
+    /* 我的购买部分 */
+    /* 我的购买部分 */
+    .purchase-info {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .purchase-header {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    /* 使用CSS Grid布局实现4列布局 */
+    .purchase-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 每行四个商品 */
+        gap: 20px; /* 商品之间的间距 */
+        padding: 0;
+    }
+
+    /* 每个购买项的样式 */
+    .purchase-item {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* 鼠标悬停时的效果 */
+    .purchase-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 购买项的标题 */
+    .purchase-details {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .purchase-link h2 {
+        font-size: 18px;
+        color: #2980b9;
+        margin: 0;
+        transition: color 0.3s ease;
+    }
+
+    .purchase-link:hover h2 {
+        color: #1abc9c;
+    }
+
+    /* 退货按钮 */
+    .purchase-return a {
+        font-size: 18px;
+        color: #e74c3c;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .purchase-return a:hover {
+        color: #c0392b;
+    }
+
+    /* 购买时间部分 */
+    .purchase-time {
+        font-size: 14px;
+        color: #7f8c8d;
+        text-align: right; /* 确保时间靠右 */
+    }
+
+    /* 去除链接的默认下划线 */
+    a {
+        text-decoration: none; /* 去掉下划线 */
+    }
+
+    /* 响应式设计，屏幕宽度小于 768px 时调整为 2 列布局 */
+    @media (max-width: 768px) {
+        .purchase-list {
+            grid-template-columns: repeat(2, 1fr); /* 每行显示两个商品 */
+        }
+    }
+
+    /* 响应式设计，屏幕宽度小于 480px 时调整为 1 列布局 */
+    @media (max-width: 480px) {
+        .purchase-list {
+            grid-template-columns: 1fr; /* 每行显示一个商品 */
+        }
+    }
+    /* 去除列表项的黑点 */
+.purchase-li {
+    list-style-type: none;
+    padding-left: 0;  /* 去除左边的默认缩进 */
+}
+</style>
+
+
+
+<div class="user-info">
+    <div class="user-header">个人信息</div>
+
+    <!-- 姓名, id, 余额靠左 -->
+    <div class="user-detail-left">
+        <span class="label1">姓名:</span><span class="value1">{{user.n}}</span>
+    </div>
+    <div class="user-detail-right">
+        <span class="label4">性别:</span> <span class="value4">{{user.s}}</span>
+    </div>
+    <div class="user-detail-left">
+        <span class="label2">id:</span> <span class="value2">{{user.id}}</span>
+    </div>
+    <div class="user-detail-right">
+        <span class="label5">账号:</span> <span class="value5">{{user.a}}</span>
+    </div>
+
+    <div class="user-detail-left">
+        <span class="label3">余额:</span> <span class="value3">{{user.b}}元</span>
+        <a href="recharge" class="action-link">充值</a>
+    </div>
+    <div class="user-detail-right">
+        <p></p>
+    </div>
+
+    <!-- 性别, 账号靠右 -->
+
+
+    <!-- 修改个人信息 和 修改密码 -->
+    <div class="user-actions">
+        <a href="information" class="action-link"><h2>修改个人信息</h2></a>
+
+    </div>
+    <div class="user-actions">
+        <a href="password" class="action-link"><h2>修改密码</h2></a>
+
+    </div>
+
+
+</div>
+
+<div class="purchase-info">
+    <div class="purchase-header">我的购买</div>
+    <div class="purchase-list">
+        {% for i in borrow %}
+        <div class="purchase-item">
+            <li class="purchase-li">
+                <div class="purchase-details">
+                    <a href="book?id={{i.bid}}" class="purchase-link"><h2>{{i.bn}}&nbsp;{{i.ba}}&nbsp;{{i.t}}</h2></a>
+                </div>
+                <div class="purchase-time">
+                    <span>{{i.time}}</span>
+                </div>
+                <div class="purchase-return">
+                    <a href="/dborrow?id={{i.id}}" class="action-link"><h2>退货</h2></a>
+                </div>
+            </li>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

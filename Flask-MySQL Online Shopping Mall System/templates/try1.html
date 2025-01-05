@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .container {
+        max-width: 800px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #7b1fa2;
+        margin: 0;
+    }
+
+    .book-info p {
+        margin: 10px 0;
+        color: #666;
+        font-size: 18px;
+    }
+
+    .book-info .price {
+        font-size: 22px;
+        color: #888;
+        margin-top: 10px;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .actions .links a {
+        color: #007bff;
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 10px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .status {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .comments-section {
+        margin-top: 40px;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+    }
+
+    .comments-section h2 {
+        font-size: 22px;
+        margin: 0;
+        color: #333;
+    }
+
+    .comment {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+    }
+
+    .comment-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+    }
+
+    .comment p {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .comment-footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #999;
+    }
+
+    .comment-footer a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .form-group {
+        margin-top: 30px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .form-group button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+</style>
+
+<div class="container">
+    <div class="book-info">
+        <h1>{{book.n}}</h1>
+        <p>{{book.a}}</p>
+        <p class="price">{{book.p}}元</p>
+    </div>
+
+    <div class="actions">
+        <div class="links">
+            <a href="borrow?id={{book.id}}">购买</a>
+            <a href="collect?id={{book.id}}">
+                <img src="{% if l %}/static/img/收藏.png{% else %}/static/img/收藏%20(1).png{% endif %}" alt="收藏"> ({{collect|length}})
+            </a>
+            <a href="like?id={{book.id}}">
+                <img src="{% if k %}/static/img/赞1.png{% else %}/static/img/赞%20(1).png{% endif %}" alt="赞"> ({{likes}})
+            </a>
+        </div>
+        <div class="status">剩余: {{book.s}} | 评分: {% if book.g == 0 %}暂无评分{% else %}{{book.g}}{% endif %} ({{book.g_n}}人)</div>
+    </div>
+
+    <div class="comments-section">
+        <h2>评论 ({{comment_number}})</h2>
+        {% for a in comment %}
+        <div class="comment">
+            <div class="comment-header">
+                <img src="/static/img/用户-圆.png" alt="用户" style="width: 32px; height: 32px;">
+                {{a.un}}
+            </div>
+            <p>{{a.c}}</p>
+            <div class="comment-footer">
+                <a href="like_comment?cid={{a.id}}&id={{book.id}}">
+                    <img src="{% if a.id in o %}/static/img/赞1.png{% else %}/static/img/赞%20(1).png{% endif %}" alt="赞"> ({{a.like}})
+                </a>
+                <span>评论时间 {{a.t}}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        <form method="POST">
+            {{ form.csrf_token() }}
+            <label>请输入评论</label>
+            <input type="text" name="comment" class="comment">
+            <button type="submit" class="submit">评论</button>
+        </form>
+    </div>
+
+    <div class="form-group">
+        <form method="POST">
+            {{ form.csrf_token() }}
+            <label>请评分</label>
+            <select name="rating" class="select">
+                <!-- Options here -->
+            </select>
+            <button type="submit" class="submit">评分</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

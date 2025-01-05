@@ -1,0 +1,1093 @@
+.a{
+    width: 100%;
+    height: 1500px;
+    background-color: snow;
+}
+.a1{
+    width: 1400px;
+    height: 60px;
+    margin-left: 55px;
+    background-color: snow;
+}
+
+.a11{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+}
+.a11:hover{
+    background-color: #D7FFF0
+}
+.a11:hover .a2{
+    display: block;
+    background-color:#D7FFF0 ;
+}
+.flash-message {
+    position: fixed;
+    top: 20px; /* 根据需要调整顶部位置 */
+    left: 50%; /* 将左边缘移到视口的50%位置 */
+    transform: translateX(-50%); /* 通过平移自身宽度的50%来实现水平居中 */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(212, 237, 218, 0.9); /* 使用RGBA设置背景颜色的透明度 */
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0; /* 删除原来的margin以避免固定定位时位置偏移 */
+    z-index: 1000; /* 确保提示框悬浮在其他元素之上 */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+.a12{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.a12:hover{
+    background-color: #D7FFF0
+}
+.a12:hover .a2s{
+    display: block;
+}
+.a13{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.a13:hover{
+    background-color: #D7FFF0
+}
+.a14{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.a14:hover{
+    background-color: #D7FFF0
+}
+.a15{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.a16{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.a17 {
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.a2{
+    width: 1400px;
+    height: 120px;
+    margin-top: 0px;
+    background-color: snow;
+    display: none;
+    float: left;
+    position: fixed;
+    z-index: 1000; /* 设置较高的 z-index 值 */
+
+}
+
+.a21{
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    background-color: white;
+    float: left;
+}
+.a22{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a23{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a24{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a25{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a26{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a27 {
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a31{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a32{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a33{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a34{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a35{
+    width: 200px;text-align: center;
+    height: 60px;
+
+    background-color: white;
+    float: left;
+}
+.a36{
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+.a37 {
+    width: 200px;
+    height: 60px;text-align: center;
+
+    background-color: white;
+    float: left;
+}
+
+.a4{
+    height: 110px;
+    margin-top: 30px;
+    width: 850px;
+    margin-left: 280px;
+    background-color: white;
+
+}
+.a4l{
+     height: 810px;
+    margin-top: 30px;
+    width: 850px;
+    margin-left: 280px;
+    background-color: white;
+}
+.a4:hover{
+    background-color: #D7FFF0;
+}
+
+.ul{
+    width: 800px;
+    list-style-type: none;
+}
+
+.a42{
+    width: 840px;
+    height: 110px;
+    float: right;
+
+}
+.a421{
+    width: 840px;
+    height: 40px;
+    float: left;
+}
+.a422{
+    width: 840px;
+    height: 40px;
+
+    float: left;
+}
+
+.a4211{
+    width: 300px;
+    height: 40px;
+    float: left;
+
+}
+.a4212{
+    width:220px;
+    height: 40px;
+    float: right;
+    text-align: center;
+
+}
+.a423{
+    width:800px;
+    height: 30px;
+
+}
+.a4231{
+    width: 80px;
+    height: 30px;
+    float: left;
+
+}
+.a4232{
+    width: 80px;
+    height: 30px;
+
+    float: right;
+}
+.a4233{
+    width: 130px;
+    height: 30px;
+
+    float: right;
+}
+.b4{
+    height: 200px;
+    margin-top: 50px;
+    width: 1050px;
+    margin-left: 170px;
+    background-color: white;
+
+}
+.b5{
+    margin-top:0px ;
+    height: 50px;
+    width: 850px;
+    margin-left: 320px;
+    background-color: white;
+    float: left;
+}
+
+.b52{
+    margin-top: 20px;
+    height: 30px;
+    width: 60px;
+    float: right;
+}
+.b6{margin-top: 20px;
+    height: 30px;
+    padding-top: 20px;
+    width: 850px;
+    margin-left: 320px;
+    background-color: white;
+
+    float: left;
+}
+.b51{
+
+    height: 30px;
+    width: 70px;
+    float: left;}
+.b7{
+    height: 50px;
+    width: 850px;
+    margin-left: 320px;
+    background-color: white;
+    float: left
+}
+
+.b8{
+    height: 800px;
+    width: 850px;
+    margin-left: 320px;
+    background-color: white;
+    float: left
+}
+.b72{
+    height: 20px;
+    padding-top: 30px;
+    width: 300px;
+    background-color: white;
+
+float: right}
+.li h2 {
+    display: inline; /* 将 h2 设置为行内元素 */
+}
+
+.b71{
+    height: 50px;
+    width: 500px;
+    background-color: white;
+
+
+float: left}
+.b73{
+    height: 50px;
+    width: 50px;
+
+    background-color: white;
+
+float: left}
+.book-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 将内容在行内两端排列 */
+    margin-bottom: 10px; /* 使每个条目之间有间距 */
+}
+
+.li {
+    list-style: none; /* 去掉列表的默认样式 */
+
+
+}
+
+.a16:hover{
+    background-color: #D7FFF0
+}
+.a17:hover{
+    background-color: #D7FFF0
+}
+.a15:hover{
+    background-color: #D7FFF0
+}
+.a21:hover{
+    background-color: #D7FFF0
+}
+.a22:hover{
+    background-color: #D7FFF0
+}
+.a23:hover{
+    background-color: #D7FFF0
+}
+.a24:hover{
+    background-color: #D7FFF0
+}
+.a25:hover{
+    background-color: #D7FFF0
+}
+.a26:hover{
+    background-color: #D7FFF0
+}
+.a27:hover{
+    background-color: #D7FFF0
+}
+
+.a31:hover{
+    background-color: #D7FFF0
+}
+.a32:hover{
+    background-color: #D7FFF0
+}
+.a33:hover{
+    background-color: #D7FFF0
+}
+.a34:hover{
+    background-color: #D7FFF0
+}
+.a35:hover{
+    background-color: #D7FFF0
+}
+.a36:hover{
+    background-color: #D7FFF0
+}
+.a37:hover{
+    background-color: #D7FFF0
+}
+.a11:hover{
+    background-color: #D7FFF0
+}
+.a12:hover{
+    background-color: #D7FFF0
+}
+.a13:hover{
+    background-color: #D7FFF0
+}
+.a14:hover{
+    background-color: #D7FFF0
+}
+.a15:hover{
+    background-color: #D7FFF0
+}
+.e16:hover{
+    background-color: #D7FFF0
+}
+.e16s:hover .e16{
+    background-color: #D7FFF0
+}
+.c1{
+    height: 100px;
+    margin-top: 50px;
+    width: 1050px;
+    margin-left: 170px;
+    background-color: white;
+    border: black 1px solid;
+
+}
+.c11{
+    height: 60px;
+    padding-top: 40px;
+    width: 200px;
+text-align: center;
+    background-color: white;
+    float: left;
+}
+.c12{
+    height: 60px;
+    padding-top: 40px;
+
+    width: 200px;
+text-align: center;
+    background-color: white;
+    float: left;
+}
+.c13{
+    height: 60px;
+    padding-top: 40px;
+
+    width: 200px;
+text-align: center;
+    background-color: white;
+    float: left;
+}
+.c14{
+    height: 60px;
+    padding-top: 40px;
+text-align: center;
+    width: 200px;
+
+    background-color: white;
+    float: left;
+}
+.c15{
+    height: 60px;
+    padding-top: 40px;
+
+    text-align: center;
+    width: 200px;
+
+    background-color: white;
+    float: left;
+}
+.d{
+    height: 1000px;
+    margin-top: 50px;
+    width: 1050px;
+    margin-left: 170px;
+    background-color: white;
+    border: black 1px solid;
+}
+.e1{
+    width: 1300px;
+    height: 60px;
+    margin-left: 255px;
+    background-color: snow;
+}
+
+
+h2{
+    font-size: large;color: black;
+}
+h1 {font-size: large;
+            background: -webkit-linear-gradient(135deg,
+                    #0eaf6d,
+                    #ff6ac6 25%,
+                    #147b96 50%,
+                    #e6d205 55%,
+                    #2cc4e0 60%,
+                    #8b2ce0 80%,
+                    #ff6384 95%,
+                    #08dfb4);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-background-size: 200% 100%;
+            -webkit-animation: flowCss 12s infinite linear;
+        }
+@-webkit-keyframes flowCss {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -400% 0;
+            }
+        }
+
+h1:hover {
+            -webkit-animation: flowCss 4s infinite linear;
+        }
+h2{
+    font-size: large;
+color: black;
+}
+@-webkit-keyframes flowCss {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -400% 0;
+            }
+        }
+h2:hover {
+    background: -webkit-linear-gradient(135deg,
+                    #0eaf6d,
+                    #ff6ac6 25%,
+                    #147b96 50%,
+                    #e6d205 55%,
+                    #2cc4e0 60%,
+                    #8b2ce0 80%,
+                    #ff6384 95%,
+                    #08dfb4);
+    -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-background-size: 200% 100%;
+            -webkit-animation: flowCss 2s infinite linear;
+        }
+.e16s:hover .e16>h2{
+     background: -webkit-linear-gradient(135deg,
+                    #0eaf6d,
+                    #ff6ac6 25%,
+                    #147b96 50%,
+                    #e6d205 55%,
+                    #2cc4e0 60%,
+                    #8b2ce0 80%,
+                    #ff6384 95%,
+                    #08dfb4);
+    -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-background-size: 200% 100%;
+            -webkit-animation: flowCss 2s infinite linear;
+}
+.e11y{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+    float: left;text-align: center;animation:myfirst 1s;
+	-webkit-animation:myfirst 1s;animation-iteration-count:infinite;
+}
+.e11:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color:#D7FFF0 ;
+}
+
+.e12:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color:#D7FFF0 ;
+}
+.e13:hover {
+    background-color:#D7FFF0 ;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+}
+.e14:hover {
+    background-color:#D7FFF0 ;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+}
+.e15:hover {
+    background-color:#D7FFF0 ;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.e11{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.e12{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.e13{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.e14{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.e15{
+    width: 200px;
+    height: 60px;
+    font-size: large;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Dynamic effects */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.e16{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;text-align: center;
+    float: right;
+
+}
+.e16:hover .e16s{
+    display: block;
+}
+
+.e16s{display: none;
+        width: 250px;
+    height: 600px;
+    margin-top: 0px;
+    border-radius: 10px;
+    background-color: white;
+    float: right;
+    position: fixed;
+    right: 0px;
+}
+.a2s{
+    display: none;
+    width: 250px;
+    height: 600px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: white;
+    float: right;
+    position: fixed;
+    right: 0px;
+    top: 0px; /* 添加此行以确保元素靠近顶部 */
+    z-index: 1000; /* 设置较高的 z-index 值 */
+}
+.e16s1{
+        width: 250px;
+    height: 600px;
+    margin-top: 40px;
+    border-radius: 10px;
+    background-color: white;
+    float: right;
+    position: fixed;
+    right: 0px;
+}
+.e2{
+    width: 1000px;
+    margin-left: 255px;
+    background-color: white;
+    float: left;margin-top: 20px;
+
+}
+.e21{width: 1000px;
+    background-color: white;
+    height: 30px;margin-top: 5px;
+
+
+}
+.e211{
+    width: 400px;
+    height: 30px;
+    float: left;
+    text-align: left;
+
+}
+.e212{
+    width: 500px;
+    height: 30px;
+    float: right;
+    text-align: right;
+
+}
+
+.e22{
+    width: 1000px;
+    height: 30px;
+    background-color: white;
+    border-bottom:0.5px solid gray ;
+
+}
+.e221{
+    width: 400px;
+    height: 30px;
+    background-color: white;
+    text-align: left;
+    float: left;
+}
+.e222{
+    width: 500px;
+    height: 30px;
+    background-color: white;
+    text-align: right;
+    float: right;
+}
+.e3{
+    width: 1000px;
+    margin-top: 30px;
+    background-color: white;
+    float: left;
+
+}
+.e4{
+    width: 1000px;
+    height: 20px;
+    background-color: white;
+    float: left;
+
+}
+.ddd{
+    width: 100px;
+    margin-top: 50px;
+    float: right;
+
+}
+.between{
+    width: 40px;
+    height: 20px;
+}
+.submit{
+    height: 30px;
+    width: 50px;
+    border: 0px snow solid;
+    background-color: aqua;
+
+}
+.submit1{
+    height: 40px;
+    width: 80px;
+
+
+}
+.title{
+    font-size: x-large;
+    color: coral;
+    text-align: center;
+    background-color: white;
+
+}
+.input1{
+    width: 700px;
+    height: 40px;
+}
+.select{
+    width: 100px;
+    height: 40px;
+}
+.comment{
+
+}
+.f1{
+    height: 300px;
+    width: 500px;
+    float: left;
+    margin-left: 200px;
+    border-radius: 18px;background-color: white;
+}
+.f10{
+    height: 35px;
+    width: 500px;
+    float: left;
+    font-size: x-large;
+    color: coral;
+     -moz-border-radius-topleft:18px ;
+    -moz-border-radius-topright:18px ;border-bottom: 0.5px solid lightgray;padding-top: 15px;
+}
+.f11{
+    height: 35px;
+    width: 500px;
+    float: left;
+    border-bottom: 0.5px solid lightgray;padding-top: 15px;
+}
+.f12{
+    height: 100px;
+    width: 500px;
+}
+.f13{
+    height: 50px;
+    width: 250px;
+    float: left;
+    padding-bottom: 0px;
+}
+.f14{
+    height: 50px;
+    width: 250px;
+    float: right;
+    padding-bottom: 0px;
+}
+.f2{
+    width: 700px;
+    height: 500px;
+    float: right;
+    margin-right: 200px;
+    border-radius: 18px;background-color: white;
+}
+.f20{
+    height: 35px;
+    width: 700px;
+    float: left;
+    font-size: x-large;
+    color: coral;
+
+}
+.f21{
+    height: 35px;
+    width: 700px;
+    margin-bottom: 0px;
+    float: right;
+}
+
+
+
+
+
+
+.user-info-form {
+    width: 60%; /* 或根据需要调整宽度 */
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.input1, .select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s ease;
+}
+
+.input1:focus, .select:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+.submit1 {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit1:hover {
+    background-color: #3498db;
+}

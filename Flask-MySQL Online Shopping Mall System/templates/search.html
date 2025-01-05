@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{%block title%}搜索商品{%endblock%}
+
+
+{%block body%}
+
+
+
+    <form method="POST">
+        {{ form.csrf_token() }}
+        <p>请输入商品名</p>
+        <p>{{ form.n }}</p>
+        <p>请输入品牌名</p>
+        <p>{{ form.a }}</p>
+        <p>请输入类型</p>
+        <p>{{ form.t }}</p>
+        <p>{{form.submit(class='submit')}}</p>
+    </form>
+{%endblock%}

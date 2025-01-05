@@ -1,0 +1,67 @@
+{%extends 'admin.html'%}
+
+{%block search%}<a href="bsearch"><div class="e16">搜索商品</div></a>{%endblock%}
+
+{%block body%}
+<div class="e2">
+{%for a in books%}
+    <li class="li">
+<div class="e21">
+    <div class="e211"><a href="book?id={{a.id}}">{{a.n}}  品牌:{{a.a}}  剩余:{{a.s}}</a></div>
+    <div class="e212">点赞数({{a.like}})评分:{{a.g}}</div>
+</div>
+<div class="e22">
+    <div class="e221">{{a.t}}
+    </div>
+    <div class="e222"><a href="off1?id={{a.id}}">下架一个</a>   <a href="off?id={{a.id}}">全部下架</a> <a href="add?id={{a.id}}">进货该商品</a>
+<a href="edit?id={{a.id}}">修改</a></div>
+</div>
+
+
+</li>
+{%endfor%}
+
+<div class="e3">
+    <div class="e4">
+登记的数量为0的商品</div>
+{%for a in book1%}
+       <li class="li">
+<div class="e21">
+    <div class="e211"><a href="book?id={{a.id}}">{{a.n}}  品牌:{{a.a}}  剩余:{{a.s}}</a></div>
+    <div class="e212">点赞数({{a.like}})评分:{{a.g}}</div>
+</div>
+<div class="e22">
+    <div class="e221">{{a.t}}
+    </div>
+    <div class="e222">    <a href="add?id={{a.id}}">进货该商品</a>
+<a href="edit?id={{a.id}}">修改</a>  <a href="off2">删除记录</a></div>
+</div>
+
+
+</li>
+
+{%endfor%}
+
+</div>
+
+</div>
+
+
+
+
+<div>
+
+
+
+
+</div>
+
+
+
+{%endblock%}
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{%extends 'manage.html'%}
+{%block title%}查找商品{%endblock%}
+{%block body%}
+查找商品
+    <form method="POST">
+        {{ form.csrf_token() }}
+      <p>请输入商品名</p>
+        <p>{{ form.n }}</p>
+        <p>请输入品牌名</p>
+        <p>{{ form.a }}</p>
+        <p>请输入类型</p>
+        <p>{{ form.t(class='select') }}</p>
+
+        <p>{{form.submit(class='submit')}}</p>
+    </form>
+<a href="manage">返回</a>
+{%endblock%}

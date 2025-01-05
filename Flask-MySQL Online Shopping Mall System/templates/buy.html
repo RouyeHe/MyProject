@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}购买商品{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" charset="utf-8">
+</head>
+<body>
+<div class="a">
+<div class="e1">
+
+
+
+    <a href="/buy"> <div class="e11"><h1>购商品</h1></div></a>
+    <a href="/"><div class="e12"><h2>回主页</h2></div></a>
+    <a href="manage"><div class="e13"><h2>管理商品</h2></div></a>
+    <a href="muser"> <div class="e14"><h2>管理用户</h2></div></a>
+    <a href="mcomment"><div class="e15"><h2>管理评论</h2></div></a>
+
+
+
+
+
+
+
+</div>
+
+<div class="e2">
+    <form method="POST">
+        {{ form.csrf_token() }}
+        <p>请输入商品名</p>
+        <p>{{ form.n (class='input1')}}</p>
+        <p>请输入品牌名</p>
+        <p>{{ form.a(class='input1') }}</p>
+      <p>请选择该商品的类型</p>
+        <p>{{ form.t (class='select')}}</p>
+      <p>请输入购买数量</p>
+        <p>{{ form.x (class='input1')}}</p>
+        <p>{{form.submit(class='submit1')}}</p>
+    </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+<a href="msearch">查找商品</a>
+{%for a in books%}
+<li><a href="book?id={{a.id}}">{{a.n}}{{a.a}}{{a.t}}{{a.s}}点赞数({{a.like}})评分:{{a.g}}</a>
+<a href="off1?id={{a.id}}">下架一个</a>   <a href="off?id={{a.id}}">全部下架</a> <a href="add?id={{a.id}}">进货该商品</a>
+<a href="edit?id={{a.id}}">修改</a>
+</li>
+{%endfor%}
+
+
+登记的数量为0的商品
+{%for a in book1%}
+<li><a href="book?id={{a.id}}">{{a.n}}{{a.a}}{{a.t}}{{a.s}}点赞数({{a.like}})评分:{{a.g}}</a>
+<a href="add?id={{a.id}}">进货该商品</a>
+<a href="edit?id={{a.id}}">修改</a><a href="off2">删除记录</a>
+</li>
+{%endfor%}
+{%block body%}{%endblock%}
+</body>
+</html>

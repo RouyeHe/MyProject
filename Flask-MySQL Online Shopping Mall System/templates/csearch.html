@@ -1,0 +1,27 @@
+{%extends 'cedit.html'%}
+{%block title%}查找评论{%endblock%}
+{%block body%}
+
+
+
+查找评论
+    <form method="POST">
+        {{ form.csrf_token() }}
+      <p>请输入评论id</p>
+        <p>{{ form.id }}</p>
+      <p>请输入评论内容</p>
+        <p>{{ form.c }}</p>
+         <p>请输入商品id</p>
+        <p>{{ form.bid }}</p>
+         <p>请输入用户id</p>
+        <p>{{ form.uid }}</p>
+         <p>请输入时间</p>
+        <p>{{ form.t }}</p>
+      <p>请输入点赞数</p>
+        <p>{{ form.like }}</p>
+        <p>{{form.submit(class='submit')}}</p>
+    </form>
+
+
+
+{%endblock%}

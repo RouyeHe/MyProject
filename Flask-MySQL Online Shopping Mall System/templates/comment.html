@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="a">
+
+
+
+
+
+
+<div class="a1">
+
+
+    <div class="a11"><h2>分类
+</h2>
+        <div class="a2">
+ <a href="t1"><div class="a21"><h2>电子产品</h2></div>
+    </a>
+
+
+           <a href="t2"> <div class="a22"><h2>运动户外</h2></div>
+    </a><a href="t3"><div class="a23"><h2>家用电器</h2></div>
+    </a><a href="t4"><div class="a24"><h2>图书音像</h2></div>
+    </a>
+           <a href="t5"> <div class="a25"><h2>服饰服装</h2>
+    </div></a>
+           <a href="t6"> <div class="a26"><h2>汽车用品</h2>
+    </div></a>
+          <a href="t7">  <div class="a27"><h2>美妆护肤</h2>
+    </div></a>
+          <a href="t8">  <div class="a31"><h2>宠物用品</h2>
+    </div></a>
+          <a href="t9">  <div class="a32"><h2>食品饮料</h2>
+    </div></a>
+           <a href="t10"> <div class="a33"><h2>玩具乐器</h2>
+    </div></a>
+          <a href="t11">  <div class="a34"><h2>家具用品</h2>
+    </div></a>
+         <a href="t12">   <div class="a35"><h2>办公用品</h2>
+    </div></a>
+          <a href="t13">  <div class="a36"><h2>母婴用品</h2>
+</div></a>
+         <a href="t14">   <div class="a37"><h2>健康护理</h2></div></a>
+
+
+
+
+</div>
+    </div>
+
+   <a href="/"> <div class="a13"><h2>主页</h2></div></a>
+   <a href="/index"> <div class="a14"><h1>个人中心</h1></div></a>
+   <a href="/login"> <div class="a15"><h2>登录</h2></div></a>
+   <a href="/register"><div class="a16"><h2>注册</h2></div></a>
+    <a href="/admin"><div class="a17"><h2>管理员</h2></div></a>
+
+    <div class="a12"><h2>搜索商品</h2>
+        <div class="a2s">
+
+        搜索商品
+     <form method="POST">
+        {{ form.csrf_token() }}
+      <p>请输入商品名</p>
+        <p>{{ form.n }}</p>
+      <p>请输入品牌名</p>
+        <p>{{ form.a }}</p>
+    <p>请输入类型</p> <p>{{ form.t }}</p>
+         <p>请输入剩余数量</p>
+        <p>{{ form.s1 (class='between')}}~{{form.s2(class='between')}}</p>
+         <p>请输入评分</p>
+        <p>{{ form.g1 (class='between')}}~{{form.g2(class='between')}}</p>
+         <p>请输入点赞数</p>
+        <p>{{ form.like1 (class='between')}}~{{form.like2(class='between')}}</p>
+
+        <p>{{form.submit(class='submit')}}</p>
+    </form>
+<a href="/">返回</a>
+
+
+
+
+       </div>
+    </div>
+
+
+</div>
+
+<div class="e1">
+  <a href="/index" style="text-decoration: none;color: black"> <div class="e11"><h2>个人信息</h2></div></a>
+    <a href="/my_like"><div class="e12"><h2>我的点赞</h2></div></a>
+    <a href="my_collect"><div class="e13"><h2>我的收藏</h2></div></a>
+    <a href="my_comment"> <div class="e14"><h1>我的评论</h1></div></a>
+       <a href="record"><div class="e15"><h2>浏览记录</h2></div></a>
+
+
+</div>
+
+
+
+
+
+<div class="e2">
+{%for a in comment%}
+    <li class="li"><a href="book?id={{a.bid}}">
+<div class="e21">
+    <div class="e211">内容:{{a.c}}   </a></div>
+    <div class="e212">时间:{{a.t}}  点赞数:{{a.like}}</div>
+</div>
+<div class="e22">
+    <div class="e221">  商品名:{{a.bn}}
+    </div>
+    <div class="e222"><a href="cdelete?id={{a.id}}">删除</a>
+</div>
+</a>
+
+</li>
+{%endfor%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

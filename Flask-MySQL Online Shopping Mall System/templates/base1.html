@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="a">
+
+
+
+
+
+
+<div class="a1">
+
+
+    <div class="a11">分类
+
+        <div class="a2">
+ <div class="a21"><a href="t1">电子产品
+    </a></div><div class="a22"><a href="t2">运动户外
+    </a></div><div class="a23"><a href="t3">家用电器
+    </a></div><div class="a24"><a href="t4">图书音像
+    </a></div><div class="a25"><a href="t5">服饰服装
+    </a></div><div class="a26"><a href="t6">汽车用品
+    </a></div><div class="a27"><a href="t7">美妆护肤
+    </a></div><div class="a31"><a href="t8">宠物用品
+    </a></div><div class="a32"><a href="t9">食品饮料
+    </a></div><div class="a33"><a href="t10">玩具乐器
+    </a></div><div class="a34"><a href="t11">家具用品
+    </a></div><div class="a35"><a href="t12">办公用品
+    </a></div><div class="a36"><a href="t13">母婴用品
+</a></div><div class="a37"><a href="t14">健康护理</a></div>
+
+
+
+
+</div>
+    </div>
+    <div class="a12">搜索
+        <div class="a2s"><a href="search">搜索</a></div>
+    </div>
+       <a href="/"> <div class="a13"><h1>主页</h1></div></a>
+   <a href="/index"> <div class="a14"><h2>个人中心</h2></div></a>
+   <a href="/login"> <div class="a15"><h2>登录</h2></div></a>
+   <a href="/register"><div class="a16"><h2>注册</h2></div></a>
+    <a href="/admin"><div class="a17"><h2>管理员</h2></div></a>
+ <div class="a12"><h2>搜索商品</h2>
+        <div class="a2s">
+
+        搜索商品
+     <form method="POST">
+        {{ form1.csrf_token() }}
+      <p>请输入商品名</p>
+        <p>{{ form1.n }}</p>
+      <p>请输入品牌名</p>
+        <p>{{ form1.a }}</p>
+    <p>请输入类型</p> <p>{{ form1.t }}</p>
+         <p>请输入剩余数量</p>
+        <p>{{ form1.s1 (class='between')}}~{{form1.s2(class='between')}}</p>
+         <p>请输入评分</p>
+        <p>{{ form1.g1 (class='between')}}~{{form1.g2(class='between')}}</p>
+         <p>请输入点赞数</p>
+        <p>{{ form1.like1 (class='between')}}~{{form1.like2(class='between')}}</p>
+
+        <p>{{form1.submit(class='submit')}}</p>
+    </form>
+<a href="/">返回</a>
+
+
+
+
+       </div>
+    </div>
+
+
+
+{%block body%}{%endblock%}
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

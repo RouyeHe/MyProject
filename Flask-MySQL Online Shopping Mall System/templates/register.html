@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+
+<script>
+  // 页面加载后设置闪烁信息的淡出效果
+  window.onload = function() {
+    setTimeout(function() {
+      var flashMessages = document.querySelectorAll('.flash-message');
+      flashMessages.forEach(function(message) {
+        message.style.transition = "opacity 0.5s ease";
+        message.style.opacity = "0";
+        setTimeout(function() {
+          message.remove();
+        }, 500); // 在淡出动画结束后移除元素
+      });
+    }, 1000); // 3秒后开始淡出
+  };
+</script>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+        <div class="flash-message">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+<div class="a">
+
+
+
+
+
+
+<div class="a1">
+
+
+    <div class="a11"><h2>分类
+</h2>
+        <div class="a2">
+ <a href="t1"><div class="a21"><h2>电子产品</h2></div>
+    </a>
+
+
+           <a href="t2"> <div class="a22"><h2>运动户外</h2></div>
+    </a><a href="t3"><div class="a23"><h2>家用电器</h2></div>
+    </a><a href="t4"><div class="a24"><h2>图书音像</h2></div>
+    </a>
+           <a href="t5"> <div class="a25"><h2>服饰服装</h2>
+    </div></a>
+           <a href="t6"> <div class="a26"><h2>汽车用品</h2>
+    </div></a>
+          <a href="t7">  <div class="a27"><h2>美妆护肤</h2>
+    </div></a>
+          <a href="t8">  <div class="a31"><h2>宠物用品</h2>
+    </div></a>
+          <a href="t9">  <div class="a32"><h2>食品饮料</h2>
+    </div></a>
+           <a href="t10"> <div class="a33"><h2>玩具乐器</h2>
+    </div></a>
+          <a href="t11">  <div class="a34"><h2>家具用品</h2>
+    </div></a>
+         <a href="t12">   <div class="a35"><h2>办公用品</h2>
+    </div></a>
+          <a href="t13">  <div class="a36"><h2>母婴用品</h2>
+</div></a>
+         <a href="t14">   <div class="a37"><h2>健康护理</h2></div></a>
+
+
+
+
+</div>
+    </div>
+{%block aa%}
+   <a href="/"> <div class="a13"><h2>主页</h2></div></a>
+   <a href="/index"> <div class="a14"><h2>个人中心</h2></div></a>
+   <a href="/login"> <div class="a15"><h2>登录</h2></div></a>
+   <a href="/register"><div class="a16"><h1>注册</h1></div></a>
+    <a href="/admin"><div class="a17"><h2>管理员</h2></div></a>
+    {%endblock%}
+    <div class="a12"><h2>搜索商品</h2>
+        <div class="a2s">
+
+        搜索商品
+     <form method="POST">
+        {{ form1.csrf_token() }}
+      <p>请输入商品名</p>
+        <p>{{ form1.n }}</p>
+      <p>请输入品牌名</p>
+        <p>{{ form1.a }}</p>
+    <p>请输入类型</p> <p>{{ form1.t }}</p>
+         <p>请输入剩余数量</p>
+        <p>{{ form1.s1 (class='between')}}~{{form1.s2(class='between')}}</p>
+         <p>请输入评分</p>
+        <p>{{ form1.g1 (class='between')}}~{{form1.g2(class='between')}}</p>
+         <p>请输入点赞数</p>
+        <p>{{ form1.like1 (class='between')}}~{{form1.like2(class='between')}}</p>
+
+        <p>{{form1.submit(class='submit')}}</p>
+    </form>
+<a href="/">返回</a>
+
+
+
+
+       </div>
+    </div>
+
+
+</div>
+
+<div class="a">
+    <div class="a4l"><div class="title">注册页面</div>
+    <form method="POST">
+        {{ form.csrf_token() }}
+        <p>请输入账号</p>
+        <p>{{ form.a (class='input1')}}</p>
+        <p>请输入密码</p>
+        <p>{{ form.p(class='input1') }}</p>
+        <p>请再次确认密码</p>
+        <p>{{ form.pp(class='input1') }}</p>
+       <p>请输入姓名</p>
+        <p>{{ form.n (class='input1')}}</p>
+        <p>请输入性别</p>
+        <p>{{ form.s(class='select') }}</p>
+        <p>{{form.submit(class='submit1')}}</p>
+    </form>    </div>
+</div>
+
+
+</div>
+</body>
+</html>

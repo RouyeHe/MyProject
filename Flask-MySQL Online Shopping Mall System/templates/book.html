@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+<script>
+  // 页面加载后设置闪烁信息的淡出效果
+  window.onload = function() {
+    setTimeout(function() {
+      var flashMessages = document.querySelectorAll('.flash-message');
+      flashMessages.forEach(function(message) {
+        message.style.transition = "opacity 0.5s ease";
+        message.style.opacity = "0";
+        setTimeout(function() {
+          message.remove();
+        }, 500); // 在淡出动画结束后移除元素
+      });
+    }, 1000); // 3秒后开始淡出
+  };
+</script>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+        <div class="flash-message">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+
+
+
+
+<div class="a1">
+
+{%block aa%}
+    <div class="a11"><h2>分类
+</h2>{%endblock%}
+        <div class="a2">
+<a href="t1"><div class="a21"><h2>电子产品</h2></div></a>
+<a href="t2"><div class="a22"><h2>家用电器</h2></div></a>
+<a href="t3"><div class="a23"><h2>服装服饰</h2></div></a>
+<a href="t4"><div class="a24"><h2>美妆护肤</h2></div></a>
+<a href="t5"><div class="a25"><h2>食品饮料</h2></div></a>
+<a href="t6"><div class="a26"><h2>家居用品</h2></div></a>
+<a href="t7"><div class="a27"><h2>母婴用品</h2></div></a>
+<a href="t8"><div class="a31"><h2>运动户外</h2></div></a>
+<a href="t9"><div class="a32"><h2>图书音像</h2></div></a>
+<a href="t10"><div class="a33"><h2>汽车用品</h2></div></a>
+<a href="t11"><div class="a34"><h2>宠物用品</h2></div></a>
+<a href="t12"><div class="a35"><h2>玩具乐器</h2></div></a>
+<a href="t13"><div class="a36"><h2>办公用品</h2></div></a>
+<a href="t14"><div class="a37"><h2>健康护理</h2></div></a>
+
+
+
+</div>
+    </div>
+{%block bbb%}
+   <a href="/"> <div class="a13"><h1>主页</h1></div></a>{%endblock%}
+   <a href="/index"> <div class="a14"><h2>个人中心</h2></div></a>
+   <a href="/login"> <div class="a15"><h2>登录</h2></div></a>
+   <a href="/register"><div class="a16"><h2>注册</h2></div></a>
+    <a href="/admin"><div class="a17"><h2>管理员</h2></div></a>
+
+    <div class="a12"><h2>搜索商品</h2>
+        <div class="a2s">
+
+        搜索商品
+     <form method="POST">
+        {{ form.csrf_token() }}
+      <p>请输入商品名</p>
+        <p>{{ form.n }}</p>
+      <p>请输入品牌名</p>
+        <p>{{ form.a }}</p>
+    <p>请输入类型</p> <p>{{ form.t }}</p>
+         <p>请输入剩余数量</p>
+        <p>{{ form.s1 (class='between')}}~{{form.s2(class='between')}}</p>
+         <p>请输入评分</p>
+        <p>{{ form.g1 (class='between')}}~{{form.g2(class='between')}}</p>
+         <p>请输入点赞数</p>
+        <p>{{ form.like1 (class='between')}}~{{form.like2(class='between')}}</p>
+
+        <p>{{form.submit(class='submit')}}</p>
+    </form>
+<a href="/">返回</a>
+
+
+
+
+       </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    /* 主容器样式，居中显示并留出左右边距 */
+    /* 主容器样式，居中显示并留出左右边距 */
+    .main-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f6f9; /* 淡灰色背景 */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* 商品区样式 */
+    .custom-a4 {
+        background-color: #ffffff; /* 白色背景 */
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* 商品区鼠标悬停效果 */
+    .custom-a4:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 商品信息样式 */
+    .custom-a4211 h1 {
+        font-size: 30px;
+        color: #2c3e50; /* 深灰色 */
+        margin: 0;
+        transition: color 0.3s ease;
+    }
+
+    .custom-a4212 {
+        color: #27ae60; /* 绿色 */
+        font-size: 24px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    /* 商品描述部分 */
+    .custom-a422 {
+        margin-top: 10px;
+        color: #7f8c8d; /* 浅灰色 */
+        font-size: 16px;
+    }
+
+    /* 商品标签、剩余和评分区 */
+    .custom-a423 {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #95a5a6; /* 淡灰蓝色 */
+    }
+
+    .custom-a4231,
+    .custom-a4232,
+    .custom-a4233 {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+    /* 鼠标悬停时文字颜色变化 */
+    .custom-a4:hover .custom-a4211 h1,
+    .custom-a4:hover .custom-a4212,
+    .custom-a4:hover .custom-a4231,
+    .custom-a4:hover .custom-a4232,
+    .custom-a4:hover .custom-a4233 {
+        color: #2980b9; /* 深蓝色 */
+    }
+
+    /* 按钮区 */
+    .custom-b5 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+
+
+    .custom-a {
+        text-decoration: none;
+        color: black;
+        background-color: #dfe6e9; /* 深灰蓝色 */
+        padding: 14px 30px;
+        border-radius: 8px;
+        font-size: 18px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+        box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+    }
+
+    .custom-b {
+        text-decoration: none;
+        color: black;
+        background-color: #e9f7ef; /* 深灰蓝色 */
+        padding: 14px 30px;
+        border-radius: 8px;
+        font-size: 18px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+        box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+    }
+
+    .custom-c {
+        text-decoration: none;
+        color: black;
+        background-color: #fef9e4; /* 深灰蓝色 */
+        padding: 14px 30px;
+        border-radius: 8px;
+        font-size: 18px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+        box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+    }
+
+    /* 按钮悬停效果 */
+    .custom-a:hover {
+        background-color: #2c3e50; /* 深蓝色 */
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+    }
+
+    /* 评论部分样式 */
+    .custom-b6 {
+        margin-top: 30px;
+    }
+
+    .custom-b51 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #34495e; /* 深灰蓝色 */
+        border-bottom: 2px solid #2980b9; /* 深蓝色 */
+        padding-bottom: 5px;
+    }
+
+    /* 评论卡片样式 */
+    .custom-b7 {
+        padding: 15px;
+        margin-top: 10px;
+        background-color: #ecf0f1; /* 淡灰色背景 */
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* 评论卡片悬停效果 */
+    .custom-b7:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .custom-b73 {
+        font-size: 16px;
+        font-weight: bold;
+        color: #2980b9; /* 深蓝色 */
+    }
+
+    .custom-b71 {
+        font-size: 14px;
+        color: #2c3e50; /* 深灰色 */
+        margin: 10px 0;
+    }
+
+    /* 评论时间靠右显示 */
+    .custom-b72 {
+        font-size: 12px;
+        color: #7f8c8d; /* 灰蓝色 */
+        margin-top: 10px;
+        text-align: right;
+    }
+
+    /* 赞按钮样式 */
+    .custom-b72 img {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+    }
+
+    /* 鼠标悬停时赞图标放大 */
+    .custom-b72 img:hover {
+        transform: scale(1.2);
+    }
+
+    /* 评论和评分表单样式 */
+    .custom-b8 form {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #ecf0f1; /* 淡灰色 */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* 表单悬停效果 */
+    .custom-b8 form:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .custom-comment,
+    .custom-select {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #BDC3C7; /* 浅灰色边框 */
+        border-radius: 5px;
+        font-size: 14px;
+        background-color: #ffffff;
+    }
+
+
+    /* 提交按钮悬停效果 */
+    .custom-submit:hover {
+        background-color: #2ecc71; /* 明亮的绿色 */
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="main-container">
+    <ul class="custom-ul">
+        <a href="book?id={{book.id}}">
+            <div class="custom-a4">
+                <div class="custom-a42">
+                    <div class="custom-a421">
+                        <div class="custom-a4211"><h1>{{book.n}}</h1></div>
+                        <div class="custom-a4212">{{book.p}}元</div>
+                    </div>
+                    <div class="custom-a422">{{book.a}}</div>
+                    <div class="custom-a423">
+                        <div class="custom-a4231">{{book.t}}</div>
+                        <div class="custom-a4233">剩余:{{book.s}}</div>
+                        <div class="custom-a4233">评分: {% if book.g == 0 %}暂无评分{% else %}{{book.g}}{% endif %} ({{book.g_n}}人)</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </ul>
+
+    <div class="custom-b5">
+        <div class="custom-b52">
+            <a href="borrow?id={{book.id}}" class="custom-a">购买</a>
+        </div>
+        <div class="custom-b52">
+            {% if l %}
+            <a href="collect?id={{book.id}}" class="custom-b"><img src="/static/img/收藏.png">({{collect|length}})</a>
+            {% else %}
+            <a href="collect?id={{book.id}}" class="custom-b"><img src="/static/img/收藏%20(1).png">({{collect|length}})</a>
+            {% endif %}
+        </div>
+        <div class="custom-b52">
+            {% if k %}
+            <a href="like?id={{book.id}}" class="custom-c"><img src="/static/img/赞%20(1).png">({{likes}})</a>
+            {% else %}
+            <a href="like?id={{book.id}}" class="custom-c"><img src="/static/img/赞1.png">({{likes}})</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="custom-b6"><div class="custom-b51">评论({{comment_number}})</div></div>
+
+    {% for a in comment %}
+    <div class="custom-b7">
+        <li class="custom-li">
+            <div class="custom-b73"><img src="/static/img/用户-圆.png">{{a.un}}:</div>
+            <div class="custom-b71">{{a.c}}</div>
+            <div class="custom-b72">
+                <a href="like_comment?cid={{a.id}}&id={{book.id}}">
+                    {% if a.id in o %}
+                    <img src="/static/img/赞1.png">({{a.like}})
+                    {% else %}
+                    <img src="/static/img/赞%20(1).png">({{a.like}})
+                    {% endif %}
+                </a>
+                <span style="float: right;">评论时间 {{a.t}}</span>
+            </div>
+        </li>
+    </div>
+    {% endfor %}
+
+    <div class="custom-b8">
+        <form method="POST">
+            {{ form.csrf_token() }}
+            <p>请输入评论</p>
+            <p>{{ form1.c(class='custom-comment') }}</p>
+            <p>{{form1.submit(class='custom-submit')}}</p>
+        </form>
+        <form method="POST">
+            {{ form.csrf_token() }}
+            <p>请评分</p>
+            <p>{{ form2.g(class='custom-select') }}</p>
+            <p>{{form2.submit(class='custom-submit')}}</p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

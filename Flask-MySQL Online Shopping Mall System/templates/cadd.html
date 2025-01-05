@@ -1,0 +1,222 @@
+{%extends 'admin.html'%}
+
+{%block title%}管理用户{%endblock%}
+
+
+{%block search%}
+<style>
+    /* 增添评论的容器样式 */
+.e16s1 {
+    width: 400px; /* 设置较小的宽度 */
+    padding: 20px;
+    border: 2px solid #3498db;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute; /* 绝对定位 */
+    top: 50px; /* 距离顶部的距离 */
+    left: 50%; /* 从左侧50%开始 */
+    transform: translateX(-50%); /* 向左移动自身宽度的一半，实现水平居中 */
+    z-index: 1000; /* 确保 div 在最前面 */
+}
+
+/* 表单控件样式 */
+form p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+form input, form textarea, form select, form button {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 16px); /* 使输入框宽度适应容器 */
+}
+
+form button.submit {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    width: 100%; /* 按钮宽度适应容器 */
+}
+
+form button.submit:hover {
+    background-color: #2980b9;
+}
+
+/* 返回链接样式 */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+</style>
+
+<div class="e16s1">
+    增添评论
+    <form method="POST">
+        {{ form.csrf_token() }}
+        <p>请输入评论id</p>
+        <p>{{ form.id }}</p>
+        <p>请输入评论内容</p>
+        <p>{{ form.c }}</p>
+        <p>请输入商品id</p>
+        <p>{{ form.bid }}</p>
+        <p>请输入用户id</p>
+        <p>{{ form.uid }}</p>
+        <p>请输入点赞数</p>
+        <p>{{ form.like }}</p>
+        <p>{{ form.submit(class='submit') }}</p>
+    </form>
+    <a href="mcomment">返回</a>
+</div>
+
+
+{%endblock%}
+
+
+
+
+
+
+
+
+{%block body%}
+
+
+<style>
+ /* 基本样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 去掉所有链接下划线 */
+.manage-link, .manage-btn {
+    text-decoration: none; /* 去掉所有下划线 */
+}
+
+/* 整个评论列表的样式 */
+.manage-e2 {
+    list-style-type: none;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+
+}
+
+@media (max-width: 768px) {
+    .manage-e2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .manage-e2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 每个评论项目的容器 */
+.manage-li {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    background:white;
+}
+
+.manage-li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 评论内容部分 */
+.manage-e21 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.manage-e211, .manage-e212 {
+    font-size: 16px;
+    color: #34495e;
+    /* 确保没有下划线 */
+}
+
+.manage-e212 {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* 评论操作部分 */
+.manage-e22 {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+.manage-e221 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+/* 删除和修改按钮的样式 */
+.manage-e221 .manage-btn {
+    background-color: #3498db; /* 蓝色背景 */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.manage-e221 .manage-btn:hover {
+    background-color: #2980b9; /* 悬停时加深颜色 */
+}
+
+</style>
+<div class="manage-e2">
+    {% for a in comments %}
+    <li class="manage-li">
+        <a href="book?id={{a.bid}}" class="manage-link">
+        <div class="manage-e21">
+            <div class="manage-e211">内容: {{a.c}}   id: {{a.id}}</div>
+            <div class="manage-e212">时间: {{a.t}}   点赞数: {{a.like}}</div>
+        </div>
+        <div class="manage-e22">
+            <div class="manage-e221">用户名: {{a.un}}   商品名: {{a.bn}}</div>
+        </div>
+            <div class="manage-e221">
+                <a href="mdelete?id={{a.id}}" class="manage-btn">删除</a>
+                <a href="cedit?id={{a.id}}" class="manage-btn">修改</a>
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</div>
+
+<div class="manage-e2">
+    <div class="manage-e221">
+<a href="cadd" class="manage-btn">增添评论</a>
+    </div>
+</div>
+
+{%endblock%}

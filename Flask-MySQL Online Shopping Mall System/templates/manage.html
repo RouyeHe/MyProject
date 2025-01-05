@@ -1,0 +1,242 @@
+{%extends 'admin.html'%}
+
+{%block search%}
+<style>
+    .e16s {
+    width: 400px;
+    padding: 20px;
+    border: 2px solid #3498db;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    z-index: 1000;
+}
+
+form p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+form input, form textarea, form select, form button {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 16px);
+}
+
+form button.submit {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button.submit:hover {
+    background-color: #2980b9;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+</style>
+
+<div class="e16"><h2>搜索商品</h2>
+<div class="e16s"> <form method="POST">
+        {{ form.csrf_token() }}
+      <p>请输入商品名</p>
+        <p>{{ form.n }}</p>
+      <p>请输入品牌名</p>
+        <p>{{ form.a }}</p>
+    <p>请输入类型</p> <p>{{ form.t (class='select')}}</p>
+         <p>请输入剩余数量</p>
+        <p>{{ form.s1 (class='between')}}~{{form.s2(class='between')}}</p>
+         <p>请输入评分</p>
+        <p>{{ form.g1(class='between') }}~{{form.g2(class='between')}}</p>
+         <p>请输入点赞数</p>
+        <p>{{ form.like1 (class='between')}}~{{form.like2(class='between')}}</p>
+
+        <p>{{form.submit(class='submit')}}<a  href="/manage">返回</a></p>
+
+    </form></div>
+
+
+</div>
+
+
+
+
+{%endblock%}
+
+{%block body%}
+<style>
+    /* 基本样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 整个ul列表的样式 */
+.my-e2 {
+    list-style-type: none; /* 去掉默认的黑点 */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 每行显示3个项目 */
+    gap: 20px; /* 项目之间的间距 */
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .my-e2 {
+        grid-template-columns: repeat(2, 1fr); /* 小屏幕时每行显示2个项目 */
+    }
+}
+
+@media (max-width: 480px) {
+    .my-e2 {
+        grid-template-columns: 1fr; /* 超小屏幕时每行显示1个项目 */
+    }
+}
+
+/* 每个书籍项目的容器 */
+.my-li {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+}
+
+.my-li:hover {
+    transform: translateY(-5px); /* 悬停时向上移动 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+}
+
+/* 书籍标题和评分 */
+.my-e21 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.my-e211 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.my-e212 {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* 书籍描述 */
+.my-e22 {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+.my-e221 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.my-e222 {
+    display: flex;
+    gap: 10px;
+}
+
+.my-e222 a {
+    text-decoration: none;
+    color: #3498db; /* 蓝色 */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.my-e222 a:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* 特殊提示部分 */
+.my-e3 {
+    margin-top: 20px;
+}
+
+.my-e4 {
+    font-size: 18px;
+    color: #e74c3c; /* 红色 */
+}
+
+</style>
+<div class="my-e2">
+    {% for a in books %}
+    <li class="my-li">
+        <div class="my-e21">
+            <div class="my-e211"><a href="book?id={{a.id}}">{{a.n}} 品牌:{{a.a}} 剩余:{{a.s}}</a></div>
+            <div class="my-e212">点赞数({{a.like}}) 评论数({{a.c}}) 评分:{{a.g}}</div>
+        </div>
+        <div class="my-e22">
+            <div class="my-e221">{{a.t}} id:{{a.id}}</div>
+            <div class="my-e222">
+                <a href="off1?id={{a.id}}">下架一个</a>
+                <a href="off?id={{a.id}}">全部下架</a>
+                <a href="add?id={{a.id}}">进货该商品</a>
+                <a href="edit?id={{a.id}}">修改</a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+
+    {% if k %}
+    <div class="my-e3">
+        <div class="my-e4">登记的数量为0的商品</div>
+        {% for a in book1 %}
+        <li class="my-li">
+            <div class="my-e21">
+                <div class="my-e211"><a href="book?id={{a.id}}">{{a.n}} 品牌:{{a.a}} 剩余:{{a.s}}</a></div>
+                <div class="my-e212">点赞数({{a.like}}) 评论数({{a.c}}) 评分:{{a.g}}</div>
+            </div>
+            <div class="my-e22">
+                <div class="my-e221">{{a.t}}</div>
+                <div class="my-e222">
+                    <a href="add?id={{a.id}}">进货该商品</a>
+                    <a href="edit?id={{a.id}}">修改</a>
+                    <a href="off2">删除记录</a>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+
+{%endblock%}
+
+
+
+
+</body>
+</html>

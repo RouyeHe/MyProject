@@ -1,0 +1,28 @@
+{%extends 'uedit.html'%}
+
+{%block title%}查找用户{%endblock%}
+
+
+{%block body%}
+
+
+
+搜索用户
+    <form method="POST">
+        {{ form.csrf_token() }}
+      <p>请输入用户id</p>
+        <p>{{ form.id }}</p>
+      <p>请输入用户姓名</p>
+        <p>{{ form.n }}</p>
+         <p>请输入用户性别</p>
+        <p>{{ form.s(class='select') }}</p>
+         <p>请输入用户账号</p>
+        <p>{{ form.a }}</p>
+         <p>请输入用户密码</p>
+        <p>{{ form.p }}</p>
+        <p>{{form.submit(class='submit')}}</p>
+    </form>
+<a href="muser">返回</a>
+
+
+{%endblock%}

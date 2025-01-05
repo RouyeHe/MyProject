@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="/static/css/home.css" type="text/css" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+
+
+<div class="a1">
+
+{%block aa%}
+    <div class="a11"><h2>分类
+</h2>{%endblock%}
+        <div class="a2">
+<a href="t1"><div class="a21"><h2>电子产品</h2></div></a>
+<a href="t2"><div class="a22"><h2>家用电器</h2></div></a>
+<a href="t3"><div class="a23"><h2>服装服饰</h2></div></a>
+<a href="t4"><div class="a24"><h2>美妆护肤</h2></div></a>
+<a href="t5"><div class="a25"><h2>食品饮料</h2></div></a>
+<a href="t6"><div class="a26"><h2>家居用品</h2></div></a>
+<a href="t7"><div class="a27"><h2>母婴用品</h2></div></a>
+<a href="t8"><div class="a31"><h2>运动户外</h2></div></a>
+<a href="t9"><div class="a32"><h2>图书音像</h2></div></a>
+<a href="t10"><div class="a33"><h2>汽车用品</h2></div></a>
+<a href="t11"><div class="a34"><h2>宠物用品</h2></div></a>
+<a href="t12"><div class="a35"><h2>玩具乐器</h2></div></a>
+<a href="t13"><div class="a36"><h2>办公用品</h2></div></a>
+<a href="t14"><div class="a37"><h2>健康护理</h2></div></a>
+
+
+
+</div>
+    </div>
+{%block bbb%}
+   <a href="/"> <div class="a13"><h1>主页</h1></div></a>{%endblock%}
+   <a href="/index"> <div class="a14"><h2>个人中心</h2></div></a>
+   <a href="/login"> <div class="a15"><h2>登录</h2></div></a>
+   <a href="/register"><div class="a16"><h2>注册</h2></div></a>
+    <a href="/admin"><div class="a17"><h2>管理员</h2></div></a>
+
+
+
+    <div class="a12"><h2>搜索商品</h2>
+        <div class="a2s">
+
+        搜索商品
+     <form method="POST">
+        {{ form.csrf_token() }}
+      <p>请输入商品名</p>
+        <p>{{ form.n }}</p>
+      <p>请输入品牌名</p>
+        <p>{{ form.a }}</p>
+    <p>请输入类型</p> <p>{{ form.t }}</p>
+         <p>请输入剩余数量</p>
+        <p>{{ form.s1 (class='between')}}~{{form.s2(class='between')}}</p>
+         <p>请输入评分</p>
+        <p>{{ form.g1 (class='between')}}~{{form.g2(class='between')}}</p>
+         <p>请输入点赞数</p>
+        <p>{{ form.like1 (class='between')}}~{{form.like2(class='between')}}</p>
+
+        <p>{{form.submit(class='submit')}}</p>
+    </form>
+<a href="/">返回</a>
+
+
+
+
+       </div>
+    </div>
+
+
+</div>
+
+<ul class="ul">
+
+{%block body%}{%endblock%}
+
+
+
+
+</ul>
+
+
+
+
+<style>
+    /* 商品列表容器，使用CSS Grid布局，每行四个商品 */
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 每行四个商品 */
+        gap: 20px; /* 商品之间的间距 */
+        padding: 20px;
+    }
+
+    /* 每个商品的样式 */
+    .product-item {
+        border: 1px solid #ddd;
+        border-radius: 12px; /* 圆角 */
+        padding: 15px;
+        background-color: #fff;
+        background: linear-gradient(135deg, #f0f0f0, #ffffff); /* 渐变背景色 */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* 动态效果 */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* 鼠标悬停时的效果 */
+    .product-item:hover {
+        transform: translateY(-5px); /* 上移一点，增加悬浮效果 */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 增加阴影效果 */
+        background: linear-gradient(135deg, #ffffff, #f0f0f0); /* 悬停时背景色变化 */
+    }
+
+    /* 商品名称样式 */
+    .product-name {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        opacity: 0; /* 初始透明度为0 */
+        animation: fadeIn 1s forwards; /* 渐显动画 */
+
+        color:#800080;
+    }
+
+    /* 商品价格和品牌 */
+    .product-info {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .product-price {
+        color: #e60012;
+        font-weight: bold;
+    }
+
+    /* 使用Flexbox改善商品信息的布局 */
+    .product-info {
+        display: flex;
+        justify-content: space-between; /* 使元素分布在左右两端 */
+        align-items: center; /* 垂直居中 */
+    }
+
+    .product-info span {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    /* 商品评分、点赞和剩余的布局 */
+    .product-rating, .product-likes, .product-stock {
+        font-size: 12px;
+        color: #333;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        text-align: center; /* 文字居中 */
+        margin-top: 5px;
+    }
+
+    .product-rating span, .product-likes span, .product-stock span {
+        font-weight: bold;
+    }
+
+    /* 评分部分的样式 */
+    .rating {
+        color: #f39c12; /* 评分的颜色为金色 */
+    }
+
+    /* 点赞数的样式 */
+    .likes {
+        color: #007bff; /* 点赞颜色为蓝色 */
+    }
+
+    /* 剩余数量的样式 */
+    .stock {
+        color: #28a745; /* 剩余数量的颜色为绿色 */
+    }
+
+    /* 去除链接的默认下划线 */
+    a {
+        text-decoration: none; /* 去掉下划线 */
+    }
+
+    /* 渐显动画 */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+</style>
+
+<div class="product-list">
+    {% for a in book %}
+    <div class="product-item {% if a.clicked %}clicked{% endif %}">
+        <a href="book?id={{ a.id }}">
+            <div class="product-name">{{ a.n }}</div>
+
+            <!-- 商品信息部分，使用Flexbox布局 -->
+            <div class="product-info">
+                <span>品牌: {{ a.a }}</span>
+                <span>类型: {{ a.t }}</span>
+                <span class="product-price">{{ a.p }}元</span>
+            </div>
+
+            <!-- 商品评分部分 -->
+            <div class="product-rating">
+                <span>评分:</span>
+                {% if a.g == 0 %}
+                    暂无评分
+                {% else %}
+                    <span class="rating">{{ a.g }}</span>
+                {% endif %}
+                <span>({{ a.g_n }}人)</span>
+            </div>
+
+            <!-- 商品点赞数 -->
+            <div class="product-likes">
+                <span class="likes">点赞:</span> {{ a.like }}
+            </div>
+
+            <!-- 商品剩余数量 -->
+            <div class="product-stock">
+                <span class="stock">剩余:</span> {{ a.s }}
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
